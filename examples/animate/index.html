@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test2</title>
+<style>
+*{margin:0;padding:0;}
+body{margin:0;padding:0;width:100%;height:100%;}
+.wrapper{
+    width:70%;
+    position:relative;
+}
+#box{
+    width:10%;
+    height:100px;
+    position:absolute;
+    top:100px;left:200px;
+    background:#666;
+    color:#fff;
+    overflow-y:auto;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.sprite{
+    width:50px;
+    height:50px;
+    background:#000;
+    position:absolute;
+    top:100px;left:0;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="box">
+    I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated 
+    </div>
+    <div class="sprite"></div>
+</div>
+
+
+<script src="../../oz.js"></script>
+<script>
+require.config({
+    baseUrl: '../../'
+});
+require([
+    "mod/lang", 
+    "lib/jquery", 
+    "mod/animate", 
+    "mod/easing", 
+    "mod/domready"
+], function(_, $, animate, easingLib){
+
+    animate.config({
+        easing: easingLib
+    });
+
+    animate.addStage('stage1', {
+        target: $('#box')[0],
+        prop: 'margin-top',
+        from: '0px',
+        to: '100px',
+        easing: 'easeOut',
+        duration: 3000,
+        callback: function(){
+            this.style.background = "#f00";
+            animate.run('stage2');
+        }
+    }, {
+        target: $('.sprite')[0],
+        prop: 'transform',
+        from: 'rotate(0deg)',
+        to: 'rotate(90deg)',
+        duration: 3000,
+        callback: function(){
+            this.style.background = "#00f";
+        }
+    });
+
+    animate.addStage('stage2', {
+        target: $('#box')[0],
+        prop: 'width',
+        from: '10%',
+        to: '90%',
+        easing: 'easeInOut',
+        duration: 2500,
+        delay: 0,
+        callback: function(){
+            this.style.background = "#00f";
+        }
+    }, {
+        target: $('#box')[0],
+        prop: 'height',
+        from: '100px',
+        to: '300px',
+        duration: 800,
+        delay: 500,
+        callback: function(){
+            this.style.background = "#0f0";
+//          animate.remove('stage2');
+            animate.pause('stage2');
+        }
+    }, {
+        target: $('.sprite')[0],
+        prop: 'left',
+        from: '20px',
+        to: '600px',
+        easing: 'easeInOutExpo',
+        duration: 3000,
+        callback: function(){
+            this.style.background = "#f00";
+        }
+    }, {
+        target: $('#box')[0],
+        prop: 'transform',
+        from: 'rotate(0deg) scale3d(1, 1, 1)',
+        to: 'rotate(-30deg) scale3d(1, 0.6, 2)',
+        duration: 2000,
+        callback: function(){
+            this.style.background = "#060";
+            this.innerHTML = '[transform end]<br>' + this.innerHTML;
+        }
+    });
+
+//  animate.complete('stage1');
+
+});
+</script>
+</body>
+</html>
