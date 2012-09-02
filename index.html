@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Ozjs : OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>Ozjs</title>
+    <title>Ozjs by dexteryy</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/dexteryy/OzJS">View on GitHub</a>
+    <header>
+      <div class="container">
+        <h1>Ozjs</h1>
+        <h2>OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD</h2>
 
-          <h1 id="project_title">Ozjs</h1>
-          <h2 id="project_tagline">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD</h2>
+        <section id="downloads">
+          <a href="https://github.com/dexteryy/OzJS/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/dexteryy/OzJS/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/dexteryy/OzJS" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/dexteryy/OzJS/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/dexteryy/OzJS/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="container">
+      <section id="main_content">
         <h1>OzJS</h1>
 
 <p>OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly <a href="http://requirejs.org/docs/whyamd.html">AMD</a> modules.</p>
 
-<p>这里一个比RequireJS历史更悠久的AMD/浏览器端模块实现，表面上用法类似，只是443行 vs 1232行、5K vs 24K的区别，实践中oz的设计和实现能带来更强大的能力和更便捷的体验，理念上则差别更大，待贫僧改日详述…</p>
+<p>oz.js是一个比RequireJS历史更悠久的AMD/浏览器端模块实现，表面上用法类似，只是443行 vs 1232行、5K vs 24K的区别，实践中oz的设计和实现能带来更强大的能力和更便捷的体验，理念上则差别更大，待贫僧改日详述…</p>
 
 <p><code>/mods</code>目录下是可自主搭建WebApp框架的模块库，正逐步开源，一个<a href="http://ww4.sinaimg.cn/large/62651c14jw1dvpfdi27o7j.jpg">真实世界中的例子</a>。</p>
 
@@ -44,16 +41,19 @@
 <h2>Tutorials</h2>
 
 <ul>
-<li><a href="https://github.com/dexteryy/OzJS/blob/master/api.md">OzJS中define的9种使用方法和模块种类</a></li>
-<li><a href="https://dexteryy.github.com/OzJS/examples/buildtool/index.html">Ozma.js: Autobuild tool for OzJS based WebApp</a></li>
+<li><a href="http://github.com/dexteryy/OzJS/blob/master/api.md">OzJS中define的9种使用方法和模块种类</a></li>
+<li><a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">Ozma.js: Autobuild tool for OzJS based WebApp</a></li>
 </ul><h2>Examples</h2>
 
 <p>例子都写的糙猛快，信息量都在源码里</p>
 
 <ul>
-<li><a href="https://github.com/dexteryy/OzJS/tree/master/examples/buildtool">Ozma.js: Autobuild tool for OzJS based WebApp</a></li>
-<li><a href="https://github.com/dexteryy/OzJS/blob/master/tests/test_event.html">Event Module</a></li>
-<li><a href="https://github.com/dexteryy/OzJS/blob/master/tests/test_animate.html">Animate Module</a></li>
+<li>OzJS Builder: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3</a>
+</li>
+<li>Event Module: <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">demo</a>
+</li>
+<li>Animate Module: <a href="http://dexteryy.github.com/OzJS/examples/animate/index.html">demo</a>
+</li>
 </ul><h2>In the Real World</h2>
 
 <ul>
@@ -68,15 +68,6 @@
       </section>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Ozjs maintained by <a href="https://github.com/dexteryy">dexteryy</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
     
-
   </body>
 </html>
