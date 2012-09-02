@@ -37,19 +37,23 @@ li {
 
 header {
   background: rgba(0, 0, 0, 0.1);
+  /*background:#eee;*/
   width: 100%;
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #ff6600;
+  border-top:10px solid #f60;
   padding: 20px 0;
   margin: 0 0 40px 0;
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 70px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
+  /*margin: 0 0 0 -40px;*/
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
+  /*font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/
+  font-family: 'Architects Daughter','Helvetica Neue',Helvetica,Arial,serif;
+  /*color: #000;*/
+  color: #f60;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
@@ -57,14 +61,29 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h1:before {
-  content: "./ ";
-  font-size: 24px;
-}
+/*header h1:before {*/
+  /*content: "./ ";*/
+  /*font-size: 24px;*/
+/*}*/
 
 header h2 {
   font-size: 18px;
   font-weight: 300;
+  color: #666;
+}
+
+footer{
+  background: rgba(0, 0, 0, 0.1);
+  margin:50px 0 0 0;
+  padding:20px 0;
+  border-top: 1px dashed #ff6600;
+  border-bottom:10px solid #f60;
+}
+footer p{
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  font-size:14px;
   color: #666;
 }
 
@@ -88,7 +107,7 @@ section img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
+  color: #ff6600;
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
@@ -137,7 +156,7 @@ ul li:before {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
-  color: #b5e853;
+  color: #ff6600;
   margin-left: -37px;
   margin-right: 21px;
   line-height: 16px;
@@ -154,7 +173,7 @@ pre {
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
   font-size: 14px;
-  color: #b5e853;
+  color: #ff6600;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -170,7 +189,7 @@ table {
 
 th {
   text-align: left;
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #ff6600;
   padding: 5px 10px;
 }
 
@@ -181,8 +200,8 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #b5e853;
-  color: #b5e853;
+  border-bottom: 1px dashed #ff6600;
+  color: #ff6600;
 }
 
 /* Buttons
@@ -190,12 +209,14 @@ hr {
 
 .btn {
   display: inline-block;
+  /*background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));*/
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
   padding: 8px 18px;
-  border-radius: 50px;
+  /*border-radius: 50px;*/
   border: 2px solid rgba(0, 0, 0, 0.7);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-  border-top: 2px solid rgba(0, 0, 0, 1);
+  /*border-bottom: 2px solid rgba(20, 20, 20, 0.7);*/
+  /*border-top: 2px solid rgba(20, 20, 20, 1);*/
+  /*color:#fff;*/
   color: rgba(255, 255, 255, 0.8);
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -207,6 +228,7 @@ hr {
 
 .btn:hover {
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
+  color: #63C0F5;
 }
 
 .btn .icon {
