@@ -12,7 +12,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -43,22 +43,29 @@ header {
   border-top:10px solid #f60;
   padding: 20px 0;
   margin: 0 0 40px 0;
+  overflow:hidden;
 }
 
 header h1 {
-  font-size: 70px;
-  line-height: 1.5;
-  /*margin: 0 0 0 -40px;*/
-  font-weight: bold;
-  /*font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/
-  font-family: 'Architects Daughter','Helvetica Neue',Helvetica,Arial,serif;
-  /*color: #000;*/
-  color: #f60;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
-  letter-spacing: -1px;
-  -webkit-font-smoothing: antialiased;
+  /*font-size: 70px;*/
+  /*line-height: 1.5;*/
+  /*[>margin: 0 0 0 -40px;<]*/
+  /*font-weight: bold;*/
+  /*[>font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;<]*/
+  /*font-family: 'Architects Daughter','Helvetica Neue',Helvetica,Arial,serif;*/
+  /*[>color: #000;<]*/
+  /*color: #f60;*/
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),*/
+               /*0 0 5px rgba(181, 232, 83, 0.1),*/
+               /*0 0 10px rgba(181, 232, 83, 0.1);*/
+  /*letter-spacing: -1px;*/
+  /*-webkit-font-smoothing: antialiased;*/
+  background:url(../images/ozjs_logo_1.png) no-repeat 0 10px;
+  height:250px;
+  width:190px;
+  text-indent:-3000px;
+  overflow:hidden;
+  float:left;
 }
 
 /*header h1:before {*/
@@ -70,6 +77,7 @@ header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
+  padding:110px 0 0 0;
 }
 
 footer{
@@ -87,6 +95,9 @@ footer p{
   color: #666;
 }
 
+#downloads {
+    margin:0;
+}
 #downloads .btn {
   display: inline-block;
   text-align: center;
@@ -228,7 +239,7 @@ hr {
 
 .btn:hover {
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
-  color: #63C0F5;
+  color: #999;
 }
 
 .btn .icon {
@@ -249,8 +260,12 @@ hr {
 */
 
 a {
-  color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  color: #999;
+  /*text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);*/
+}
+a:hover {
+    /*text-decoration:none;*/
+    color:#ccc;
 }
 
 /* Clearfix */
