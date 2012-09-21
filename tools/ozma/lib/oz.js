@@ -234,6 +234,8 @@ function exec(list){
             }
             _resets[mod.newname].push(mod);
             mod.exports = undefined;
+        } else if (mod.fullname) {
+            mod = _config.mods[mod.fullname] || mod;
         }
         if (!mod.block || !mod.running && mod.exports !== undefined) {
             continue;
@@ -346,7 +348,8 @@ function fetch(m, cb){
             });
         }
         var true_url = /^http:\/\//.test(url) ? url 
-                : (_config.enable_ozma && _config.distUrl || _config.baseUrl || '') + (_config.enableAutoSuffix ? truename(url) : url);
+                : (_config.enable_ozma && _config.distUrl || _config.baseUrl || '') 
+                    + (_config.enableAutoSuffix ? truename(url) : url);
         getScript.call(m.host || this, true_url, function(){
             forEach.call(observers, function(args){
                 args[0].call(args[1]);
@@ -567,6 +570,7 @@ var oz = {
 };
 
 require.config = config;
+define.amd = { jQuery: true };
 
 if (!window.window) { // for nodejs
     exports.oz = oz;
