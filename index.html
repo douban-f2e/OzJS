@@ -47,7 +47,7 @@
 <p>例子都写的糙猛快，信息量都在源码里</p>
 
 <ul>
-<li>OzJS Builder: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3</a>
+<li>OzJS Builder: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4</a>
 </li>
 <li>Event Module: <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">demo</a>
 </li>
@@ -64,6 +64,18 @@
 <li><a href="http://www.slideshare.net/dexter_yy/js-6228773" target="_blank">d2forum2010: 通用JS时代的模块机制和编译工具(slide)</a></li>
 <li><a href="http://www.slideshare.net/dexter_yy/mvc-8554206" target="_blank">d2forum2011: 新版阿尔法城背后的前端MVC实践(slide)</a></li>
 </ul>
+
+<h2>Changelog</h2>
+
+<ul>
+  <li><var>Ozma.js</var> 1.1.0 发布，<var>npm</var>可更新</li>
+  <li><var>Ozma.js</var>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a></li>
+  <li><var>Ozma.js</var> 支持第三方包管理系统<var>Jam</var>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a></li>
+  <li><var>Oz.js</var>默认启用<var>define.amd</var>，<var>Ozma.js</var>能更好的解析非AMD文件。</li>
+  <li>bugfix: <var>Oz.js</var>的<var>new!</var>插件</li>
+</ul>
+
+
       </section>
     </div>
 
@@ -72,19 +84,6 @@
 <p>Published with <a href="http://pages.github.com/" target="_blank">GitHub Pages</a></p>
 </footer>
 
-<script type="text/javascript">
-WebFontConfig = {
-google: { families: [ 'Architects+Daughter::latin' ] }
-};
-(function() {
-var wf = document.createElement('script');
-wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-wf.type = 'text/javascript';
-wf.async = 'true';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(wf, s);
-})(); </script>
     
   </body>
 </html>
