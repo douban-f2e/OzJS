@@ -37,26 +37,40 @@
 
 <p><code>/examples</code> 相当于文档。</p>
 
+<h2>Getting Started</h2>
+
+<p>我知道解答“我想试试，怎样开始？”的文档是最重要的，但暂时还没写嘛……先参考这些例子罢：</p>
+<ul>
+<li>Usages with oz.js & ozma.js: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1（开发环境或生产环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2（开发环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3（生产环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4（使用第三方包管理系统）</a>
+<li>WebApp demo: <a href="https://github.com/dexteryy/doubanchou">Doubanchou</a></li>
+</ul>
+
 <h2>Tutorials</h2>
 
 <ul>
 <li><a href="http://github.com/dexteryy/OzJS/blob/master/api.md">OzJS中define的9种使用方法和模块种类</a></li>
 <li><a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">Ozma.js: Autobuild tool for OzJS based WebApp</a></li>
-</ul><h2>Examples (with docs)</h2>
+</ul>
+
+<h2>Examples (with docs)</h2>
 
 <p>例子都写的糙猛快，信息量都在源码里</p>
 
 <ul>
-<li>OzJS Builder: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">usage</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4</a>
+<li>OzJS Builder (Ozma.js): <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">usage</a>
 </li>
+<li>OzJS Adapter: <a href="http://dexteryy.github.com/OzJS/examples/adapter/index.html">demo</a>
 <li>mod/lang: <a href="http://dexteryy.github.com/OzJS/examples/lang/index.html">demo</a>
 </li>
 <li>mod/event: <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">demo</a>
+</li>
+<li>mod/dollar: <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">demo</a>
 </li>
 <li>mod/animate: <a href="http://dexteryy.github.com/OzJS/examples/animate/index.html">demo</a>
 </li>
 </ul><h2>In the Real World</h2>
 
+<p>OzJS的设计和开发都偏好自底向上的原则，无论灵感、观念还是代码都完全来自真实的、面向终端用户的互联网产品</p>
 <ul class="realcases">
     <li><a href="http://alphatown.com" target="_blank">Alphatown</a><em>2D browser based virtual world</em></li>
     <li><a href="http://read.douban.com/reader" target="_blank">Douban Reader</a><em>Web browser based e-book reader</em></li>
@@ -75,12 +89,14 @@
 <h2>Changelog</h2>
 
 <ul>
-  <li><var>mod/lang</var> 增加<a href="http://dexteryy.github.com/OzJS/examples/lang/index.html">示例</a></li>
-  <li><var>Ozma.js</var> 1.1.0 发布，<var>npm</var>可更新</li>
-  <li><var>Ozma.js</var>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a></li>
-  <li><var>Ozma.js</var> 支持第三方包管理系统<var>Jam</var>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a></li>
-  <li><var>Oz.js</var>默认启用<var>define.amd</var>，<var>Ozma.js</var>能更好的解析非AMD文件。</li>
-  <li>bugfix: <var>Oz.js</var>的<var>new!</var>插件</li>
+<li><var>mod/event</var> 增加<var>promise.pipe</var>接口，某些API加了别名 <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">示例和文档</a></li>
+<li><var>mod/dollar</var> 发布beta版 <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">示例和文档</a></li>
+<li><var>mod/lang</var> 增加<a href="http://dexteryy.github.com/OzJS/examples/lang/index.html">示例和文档</a></li>
+<li><var>Ozma.js</var> 1.1.0 发布，<var>npm</var>可更新</li>
+<li><var>Ozma.js</var>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a></li>
+<li><var>Ozma.js</var> 支持第三方包管理系统<var>Jam</var>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a></li>
+<li><var>Oz.js</var>默认启用<var>define.amd</var>，<var>Ozma.js</var>能更好的解析非AMD文件。</li>
+<li>bugfix: <var>Oz.js</var>的<var>new!</var>插件</li>
 </ul>
 
 
