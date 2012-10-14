@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
     <title>OzJS: a microkernel for modular javascript</title>
   </head>
@@ -28,21 +26,30 @@
 
     <div class="container">
       <section id="main_content">
+      <a href="#" id="readmeTrans" alt="See the English version">[切换到中文版说明]</a>
+      <div class="trans-area">
+<p>OzJS is NOT yet another script loader, but a microkernel provides sorely-missing module mechanism at runtime (that means it mainly works at language-level, not file-level. Use <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html"><code>ozma.js</code></a> to process files statically at build time based on the same mechanism) for large/complex javascript program, compatibles with de facto standard (<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>, <a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> and traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>). </p>
 
-<p>OzJS is a microkernel for modular javascript, with bundles of powerful yet <a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md" target="_blank">micro-framework friendly AMD modules</a>.</p>
+<p>Even better, it was implemented earlier than well-kown RequireJS, so there's differences in philosophy and approach between <a href="http://github.com/dexteryy/OzJS/blob/master/api.md">similar APIs</a>, which bring more value. </p>
 
-<p>oz.js是一个比RequireJS历史更悠久的AMD/浏览器端模块实现，表面上用法类似，只是443行 vs 1232行、5K vs 24K的区别，实践中oz的设计和实现能带来更强大的能力和更便捷的体验，理念上则差别更大，改日详述…XD</p>
+<p>The API and code of <code>oz.js</code> are minimalist and stable. It won’t add new features that aren't truly needed (It's absolutely bad practice to meet new requirements through new configuration option or new plugin for a module mechanism provider!). The Oz project now focuses on providing bundles of powerful yet <a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md">micro-framework friendly AMD modules</a>.</p>
+</div>
+      <div class="trans-area" style="display:none">
+<p>OzJS才不是神马脚本加载器呢！人家是一个在浏览器端运行时中（就是说它主要服务于语言层级，而不是文件层级。<a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html"><code>ozma.js</code></a>可以在静态构建环节中基于同等机制更好的处理文件）为大型或复杂JS程序提供长期以来严重缺失（你懂得！）的模块机制的微！内！核！它兼容当前的事实标准（<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>，<a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> 和传统的 <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>）。</p>
 
-<p><code>/mods</code> 目录下是可自主搭建WebApp框架的模块库，正在<a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md" target="_blank">逐个发布和完善文档</a>，一个<a href="http://ww4.sinaimg.cn/large/62651c14jw1dvpfdi27o7j.jpg" target="_blank">真实世界中的例子</a>。</p>
+<p>更妙的是！它比大名鼎鼎的RequireJS实现的更早！所以虽然表面上<a href="http://github.com/dexteryy/OzJS/blob/master/api.md">用法类似</a>，只是443行 vs 1232行、5K vs 24K的区别，实践中oz的设计和实现能带来更强大的能力和更便捷的体验，理念上则差别更大，改日详述…XD </p>
 
-<p><code>/examples</code> 相当于文档。</p>
+<p><code>oz.js</code>的API和代码都是极简和稳定的，不会轻易加新功能（对一个实现模块机制的库来说，通过加入新配置选项或新插件的方式来满足新需求是多么可怕的故事啊！）。Oz项目现在专注于开发一大票能用于自由组合微框架、便于搭建WebApp的通用模块，代码都在<code>/mod</code>目录里，正在<a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md">逐个发布和完善文档</a>，一个<a href="http://ww4.sinaimg.cn/large/62651c14jw1dvpfdi27o7j.jpg">真实世界中的例子</a>。</p>
+</div>
 
 <h2>Getting Started</h2>
 
-<p>我知道解答“我想试试，怎样开始？”的文档是最重要的，但暂时还没写嘛……先参考这些例子罢：</p>
 <ul>
-<li>Usages with oz.js & ozma.js: <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1（开发环境或生产环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2（开发环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3（生产环境）</a>, <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4（使用第三方包管理系统）</a>
-<li>WebApp demo: <a href="https://github.com/dexteryy/doubanchou">Doubanchou</a></li>
+<li><a href="http://github.com/dexteryy/OzJS/blob/master/README.md">Getting Started Guide on Github</a></li>
+<li>Usage with oz.js &amp; ozma.js: <br><a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1（开发环境或生产环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2（开发环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3（生产环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4（使用第三方包管理系统）</a>
+</li>
+<li>WebApp demo: <a href="https://github.com/dexteryy/doubanchou">Doubanchou</a>
+</li>
 </ul>
 
 <h2>Tutorials</h2>
@@ -53,8 +60,6 @@
 </ul>
 
 <h2>Examples (with docs)</h2>
-
-<p>例子都写的糙猛快，信息量都在源码里</p>
 
 <ul>
 <li>OzJS Builder (Ozma.js): <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">usage</a>
@@ -68,9 +73,11 @@
 </li>
 <li>mod/animate: <a href="http://dexteryy.github.com/OzJS/examples/animate/index.html">demo</a>
 </li>
-</ul><h2>In the Real World</h2>
 
-<p>OzJS的设计和开发都偏好自底向上的原则，无论灵感、观念还是代码都完全来自真实的、面向终端用户的互联网产品</p>
+</ul>
+
+<h2>In the Real World</h2>
+
 <ul class="realcases">
     <li><a href="http://alphatown.com" target="_blank">Alphatown</a><em>2D browser based virtual world</em></li>
     <li><a href="http://read.douban.com/reader" target="_blank">Douban Reader</a><em>Web browser based e-book reader</em></li>
@@ -86,18 +93,24 @@
 <li><a href="http://www.slideshare.net/dexter_yy/mvc-8554206" target="_blank">d2forum2011: 新版阿尔法城背后的前端MVC实践(slide)</a></li>
 </ul>
 
-<h2>Changelog</h2>
+<h2>Release History</h2>
 
 <ul>
-<li><var>mod/event</var> 增加<var>promise.pipe</var>接口，某些API加了别名 <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">示例和文档</a></li>
-<li><var>mod/dollar</var> 发布beta版 <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">示例和文档</a></li>
-<li><var>mod/lang</var> 增加<a href="http://dexteryy.github.com/OzJS/examples/lang/index.html">示例和文档</a></li>
-<li><var>Ozma.js</var> 1.1.0 发布，<var>npm</var>可更新</li>
-<li><var>Ozma.js</var>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a></li>
-<li><var>Ozma.js</var> 支持第三方包管理系统<var>Jam</var>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a></li>
-<li><var>Oz.js</var>默认启用<var>define.amd</var>，<var>Ozma.js</var>能更好的解析非AMD文件。</li>
-<li>bugfix: <var>Oz.js</var>的<var>new!</var>插件</li>
+<li>提供<code>adapter.js</code>，<a href="http://dexteryy.github.com/OzJS/examples/adapter/index.html">示例和文档</a> </li>
+<li><code>mod/event</code> 增加<code>promise.pipe</code>接口，某些API加了别名 <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">示例和文档</a>
+</li>
+<li><code>mod/dollar</code> 发布beta版 <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">示例和文档</a>
+</li>
+<li><code>mod/lang</code> 增加示例</li>
+<li><code>Ozma.js</code> 1.1.0 发布，<code>npm</code>可更新</li>
+<li><code>Ozma.js</code>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a>
+</li>
+<li><code>Ozma.js</code> 支持第三方包管理系统<code>Jam</code>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a>
+</li>
+<li><code>Oz.js</code>默认启用<code>define.amd</code>，<code>Ozma.js</code>能更好的解析非AMD文件。</li>
+<li>bugfix: <code>Oz.js</code>的<code>new!</code>插件</li>
 </ul>
+
 
 
       </section>
@@ -107,7 +120,18 @@
 <p>OzJS maintained by <a href="https://github.com/dexteryy/" target="_blank">dexteryy</a></p>
 <p>Published with <a href="http://pages.github.com/" target="_blank">GitHub Pages</a></p>
 </footer>
-
+<script src="lib/jquery_src.js"></script>
+<script>
+$('#readmeTrans').click(function(e){
+    e.preventDefault();
+    $('.trans-area').toggle();
+    $(this).attr('alt', function(i, text){
+        var origin = this.innerHTML;
+        this.innerHTML = text;
+        return origin;
+    });
+});
+</script>
     
   </body>
 </html>
