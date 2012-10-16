@@ -28,11 +28,11 @@
       <section id="main_content">
       <a href="#" id="readmeTrans" alt="See the English version">[切换到中文版说明]</a>
       <div class="trans-area">
-<p>OzJS is NOT yet another script loader, but a microkernel provides sorely-missing module mechanism at runtime (that means it mainly works at language-level, not file-level. Use <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html"><code>ozma.js</code></a> to process files statically at build time based on the same mechanism) for large/complex javascript program, compatibles with de facto standard (<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>, <a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> and traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>). </p>
+<p>OzJS is NOT yet another script loader, but a microkernel that provides sorely-missing module mechanism at runtime (that means it mainly works at language-level, not file-level. Use <a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html"><code>ozma.js</code></a> to process files statically at build time based on the same mechanism) for large/complex javascript program, compatible with the de facto standards (<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>, <a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> and traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>). </p>
 
-<p>Even better, it was implemented earlier than well-kown RequireJS, so there's differences in philosophy and approach between <a href="http://github.com/dexteryy/OzJS/blob/master/api.md">similar APIs</a>, which bring more value. </p>
+<p>Even better, it was implemented earlier than the well-known RequireJS, so there are differences between <a href="http://github.com/dexteryy/OzJS/blob/master/api.md">similar APIs</a> in philosophy and approach, which bring more value.</p>
 
-<p>The API and code of <code>oz.js</code> are minimalist and stable. It won’t add new features that aren't truly needed (It's absolutely bad practice to meet new requirements through new configuration option or new plugin for a module mechanism provider!). The Oz project now focuses on providing bundles of powerful yet <a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md">micro-framework friendly AMD modules</a>.</p>
+<p>The API and code of <code>oz.js</code> are minimalist and stable. It won’t add new features that aren't truly needed (It's absolutely bad practice to meet new requirements through new configuration options or new plugins for a module mechanism provider!). The Oz project now focuses on providing bundles of powerful and yet <a href="http://github.com/dexteryy/OzJS/blob/master/mod/README.md">micro-framework friendly AMD modules</a>.</p>
 </div>
       <div class="trans-area" style="display:none">
 <p>OzJS才不是神马脚本加载器呢！人家是一个在浏览器端运行时中（就是说它主要服务于语言层级，而不是文件层级。<a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html"><code>ozma.js</code></a>可以在静态构建环节中基于同等机制更好的处理文件）为大型或复杂JS程序提供长期以来严重缺失（你懂得！）的模块机制的微！内！核！它兼容当前的事实标准（<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>，<a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> 和传统的 <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>）。</p>
@@ -48,6 +48,7 @@
 <li><a href="http://github.com/dexteryy/OzJS/blob/master/README.md">Getting Started Guide on Github</a></li>
 <li>Usage with oz.js &amp; ozma.js: <br><a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo1.html">demo1（开发环境或生产环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo2.html">demo2（开发环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo3.html">demo3（生产环境）</a> <a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">demo4（使用第三方包管理系统）</a>
 </li>
+<li>Config example for grunt: <a href="https://github.com/dexteryy/grunt-ozjs/blob/master/README.md">doc</a></li>
 <li>WebApp demo: <a href="https://github.com/dexteryy/doubanchou">Doubanchou</a>
 </li>
 </ul>
@@ -56,8 +57,14 @@
 
 <ul>
 <li><a href="http://github.com/dexteryy/OzJS/blob/master/api.md">OzJS中define的9种使用方法和模块种类</a></li>
-<li><a href="http://dexteryy.github.com/OzJS/examples/buildtool/index.html">Ozma.js: Autobuild tool for OzJS based WebApp</a></li>
 </ul>
+
+<h2>Tools</h2>
+<ul>
+<li><a href="https://github.com/dexteryy/ozma.js">ozma.js</a> - Intelligent autobuild tool for OzJS</li>
+<li><a href="https://github.com/dexteryy/grunt-ozjs">grunt-ozjs</a> - grunt tasks for oz.js and ozma.js</li>
+</ul>
+
 
 <h2>Examples (with docs)</h2>
 
@@ -96,13 +103,16 @@
 <h2>Release History</h2>
 
 <ul>
-<li>提供<code>adapter.js</code>，<a href="http://dexteryy.github.com/OzJS/examples/adapter/index.html">示例和文档</a> </li>
+
+<li><code>grunt-ozjs</code> v0.1 <a href="https://github.com/dexteryy/grunt-ozjs">Installation guide</a></li>
+<li><code>Ozma.js</code> v1.2 迁移到<a href="https://github.com/dexteryy/ozma.js">独立仓库</a>
+<li><code>adapter.js</code>发布beta <a href="http://dexteryy.github.com/OzJS/examples/adapter/index.html">示例和文档</a> </li>
 <li><code>mod/event</code> 增加<code>promise.pipe</code>接口，某些API加了别名 <a href="http://dexteryy.github.com/OzJS/examples/event/index.html">示例和文档</a>
 </li>
-<li><code>mod/dollar</code> 发布beta版 <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">示例和文档</a>
+<li><code>mod/dollar</code> 发布beta <a href="http://dexteryy.github.com/OzJS/examples/dollar/index.html">示例和文档</a>
 </li>
 <li><code>mod/lang</code> 增加示例</li>
-<li><code>Ozma.js</code> 1.1.0 发布，<code>npm</code>可更新</li>
+<li><code>Ozma.js</code> v1.1，<code>npm</code>可更新</li>
 <li><code>Ozma.js</code>对动态加载模块的多路径依赖问题提供完善的构建支持，<a href="http://github.com/dexteryy/OzJS/blob/master/examples/buildtool/js/app.js">用例演示</a>
 </li>
 <li><code>Ozma.js</code> 支持第三方包管理系统<code>Jam</code>，<a href="http://dexteryy.github.com/OzJS/examples/buildtool/demo4.html">示例和用法</a>
