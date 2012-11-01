@@ -1,7 +1,15 @@
 /**
- * Copyright (C) 2011, Dexter.Yy, MIT License
+ * using AMD (Asynchronous Module Definition) API with OzJS
+ * see http://dexteryy.github.com/OzJS/ for details
+ *
+ * Copyright (C) 2010-2012, Dexter.Yy, MIT License
+ * vim: et:ts=4:sw=4:sts=4
  */
-define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
+define("mod/animate", [
+    "mod/lang", 
+    "mod/mainloop", 
+    "host"
+], function(_, mainloop, window){
 
     var VENDORS = ['Moz', 'webkit', 'ms', 'O'],
         EVENT_NAMES = {
@@ -11,10 +19,21 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
             'O': 'oTransitionEnd'
         },
         TRANSFORM,
-        TRANSFORM_PROPS = { 'rotate': 1, 'rotateX': 1, 'rotateY': 1, 'rotateZ': 1, 'scale': 2, 'scale3d': 3, 'scaleX': 1, 'scaleY': 1, 'scaleZ': 1, 'skew': 2, 'skewX': 1, 'skewY': 1, 'translate': 2, 'translate3d': 3, 'translateX': 1, 'translateY': 1, 'translateZ': 1 },
+        TRANSFORM_PROPS = { 'rotate': 1, 
+            'rotateX': 1, 'rotateY': 1, 'rotateZ': 1, 
+            'scale': 2, 'scale3d': 3, 
+            'scaleX': 1, 'scaleY': 1, 'scaleZ': 1, 
+            'skew': 2, 'skewX': 1, 'skewY': 1, 
+            'translate': 2, 'translate3d': 3, 
+            'translateX': 1, 'translateY': 1, 'translateZ': 1 },
         TRANSIT_EVENT,
         RE_TRANSFORM = /(\w+)\(([^\)]+)/,
         RE_PROP_SPLIT = /\)\s+/,
+        doc = window.document,
+        test_elm = doc.body,
+        _getComputedStyle = (doc.defaultView || {}).getComputedStyle,
+        _array_push = Array.prototype.push,
+        _array_slice = Array.prototype.slice,
         css3_prefix,
         useCSS = false,
         hash_id = 0,
@@ -43,8 +62,7 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
                 if ((t/=d/2) < 1) return c/2*t*t + b;
                 return -c/2 * ((--t)*(t-2) - 1) + b;
             }
-        },
-        test_elm = document.createElement('div');
+        };
 
     for (var i = 0, l = VENDORS.length; i < l; i++) {
         css3_prefix = VENDORS[i];
@@ -76,24 +94,28 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
 
         transform: transform,
 
-        addStage: function(name){
-            var opts = Array.prototype.slice.call(arguments, 1);
+        add: function(name){
+            var opts = _array_slice.call(arguments, 1);
             if (useCSS) {
                 for (var i = 0, l = opts.length; i < l; i++) {
                     if (opts[i].prop === 'transform') {
                         opts.splice.apply(opts, [i, 1].concat(splitTransformSet(opts[i])));
-                        return this.addStage.apply(this, [name].concat(opts));
+                        return this.add.apply(this, [name].concat(opts));
                     }
                 }
-                _stage[name] = opts;
-                opts.forEach(run);
+                if (_stage[name]) {
+                    _array_push.apply(_stage[name], opts);
+                    opts = _stage[name];
+                } else {
+                    _stage[name] = opts;
+                }
+                if (opts.state === 1) {
+                    opts.forEach(run);
+                }
             } else {
                 opts.forEach(function(opt){
                     animateInloop(name, opt);
                 });
-            }
-            if (!mainloop.globalSignal) {
-                mainloop.run();
             }
             return this;
         },
@@ -102,6 +124,7 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
             if (useCSS) {
                 var opts = _stage[name];
                 if (opts) {
+                    opts.state = 0;
                     opts.forEach(stop);
                 }
             } else {
@@ -113,10 +136,15 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
         run: function(name){
             if (useCSS) {
                 var opts = _stage[name];
-                if (opts) {
-                    opts.forEach(run);
+                if (!opts) {
+                    opts = _stage[name] = [];
                 }
+                opts.state = 1;
+                opts.forEach(run);
             } else {
+                if (!mainloop.globalSignal) {
+                    mainloop.run();
+                }
                 mainloop.run(name);
             }
             return this;
@@ -241,9 +269,9 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
                 opt = sets[prop];
                 if (opt && opt.prop) {
                     str.push([
-                        TRANSFORM_PROPS[opt.prop] && TRANSFORM || opt.prop, 
-                        (opt.duration || 0) + 'ms', 
-                        timing_values[opt.easing] || 'linear', 
+                        TRANSFORM_PROPS[opt.prop] && TRANSFORM || opt.prop,
+                        (opt.duration || 0) + 'ms',
+                        timing_values[opt.easing] || 'linear',
                         (opt.delay || 0) + 'ms'
                     ].join(' '));
                 }
@@ -282,7 +310,7 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
     }
 
     function stop(opt){
-        var elm = opt.target, 
+        var elm = opt.target,
             hash = elm2hash(elm),
             sets = _transition_sets[hash],
             current = parseFloat(opt.from),
@@ -292,6 +320,7 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
             time = +new Date() - opt.startTime,
             progress = time / (opt.duration || 1);
         if (sets) {
+            clearTimeout((sets[opt.prop] || {})._runtimer);
             delete sets[opt.prop];
         }
         if (progress < 1) {
@@ -310,7 +339,7 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
     }
 
     function complete(opt){
-        var elm = opt.target, 
+        var elm = opt.target,
             hash = elm2hash(elm),
             sets = _transition_sets[hash];
         if (sets) {
@@ -327,13 +356,14 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
         if (!opt.prop || opt.from == opt.to) {
             return;
         }
-        var elm = opt.target, 
+        var elm = opt.target,
             hash = elm2hash(elm);
         opt.startTime = +new Date() + (opt.delay || 0);
         _transition_sets[hash][opt.prop] = opt;
         setStyleProp(elm, opt.prop, opt.from);
         var str = transitionStr(hash);
-        setTimeout(function(){
+        opt._runtimer = setTimeout(function(){
+            delete opt._runtimer;
             elm.style[css3_prefix + 'Transition'] = str;
             setStyleProp(elm, opt.prop, opt.to);
         }, 0);
@@ -350,11 +380,14 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
                 animateInloop(name, newopt);
             });
         } else {
-            var elm = opt.target, 
-                current = parseFloat(opt.from),
-                end = parseFloat(opt.to),
+            var elm = opt.target,
+                end = parseFloat(opt.to);
+            if (opt.from === undefined) {
+                opt.from = getStyleValue(elm, opt.prop);
+            }
+            var current = parseFloat(opt.from),
                 unit = current == opt.from ? 0 : opt.from.replace(/^[-\d\.]+/, '');
-            mainloop.animate(name, current, end, opt.duration, {
+            mainloop.addAnimate(name, current, end, opt.duration, {
                 easing: opt.easing,
                 //easing: opt.easing || 'linear',
                 delay: opt.delay,
@@ -368,6 +401,23 @@ define("mod/animate", ["mod/lang", "mod/mainloop"], function(_, mainloop){
                 }
             });
         }
+    }
+
+    function getStyleValue(node, name){
+        return node && (node.style[css_method(name)] 
+            || getPropertyValue(node, name));
+    }
+
+    function getPropertyValue(node, name){
+        return _getComputedStyle 
+            ? _getComputedStyle(node, '').getPropertyValue(name)
+            : node.currentStyle[name];
+    }
+
+    function css_method(name){
+        return name.replace(/-+(.)?/g, function($0, $1){
+            return $1 ? $1.toUpperCase() : '';
+        }); 
     }
 
     function splitTransformSet(opt){

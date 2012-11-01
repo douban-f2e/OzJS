@@ -1,5 +1,9 @@
 /**
- * Copyright (C) 2011, Dexter.Yy, MIT License
+ * using AMD (Asynchronous Module Definition) API with OzJS
+ * see http://dexteryy.github.com/OzJS/ for details
+ *
+ * Copyright (C) 2010-2012, Dexter.Yy, MIT License
+ * vim: et:ts=4:sw=4:sts=4
  */
 define('mod/mapviewer', [
     'mod/lang', 
@@ -128,12 +132,12 @@ define('mod/mapviewer', [
                 self.event.fire("moveEnd");
             } else {
                 var stage = "mapViewer-" + this.uuid + ":move";
-                mainloop.remove(stage).animate(stage, vp.scrollLeft, x, duration, {
+                mainloop.remove(stage).addAnimate(stage, vp.scrollLeft, x, duration, {
                     easing: effect || 'linear',
                     step: function(v){
                         vp.scrollLeft = v;
                     }
-                }).animate(stage, vp.scrollTop, y, duration, {
+                }).addAnimate(stage, vp.scrollTop, y, duration, {
                     easing: effect || 'linear',
                     step: function(v){
                         vp.scrollTop = v;
@@ -142,7 +146,7 @@ define('mod/mapviewer', [
                         mainloop.remove(stage);
                         self.event.fire("moveEnd");
                     }
-                });
+                }).run(stage);
             }
             return this.event.promise("moveEnd");
         }

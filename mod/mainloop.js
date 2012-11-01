@@ -1,5 +1,9 @@
 /**
- * Copyright (C) 2011, Dexter.Yy, MIT License
+ * using AMD (Asynchronous Module Definition) API with OzJS
+ * see http://dexteryy.github.com/OzJS/ for details
+ *
+ * Copyright (C) 2010-2012, Dexter.Yy, MIT License
+ * vim: et:ts=4:sw=4:sts=4
  */
 define("mod/mainloop", ["mod/lang"], function(_){
 
@@ -64,6 +68,10 @@ define("mod/mainloop", ["mod/lang"], function(_){
         run: function(name){
             if (name) {
                 var stage = stageLib[name];
+                if (!stage) {
+                    this.addStage(name);
+                    stage = stageLib[name];
+                }
                 if (stage && !stage.state) {
                     stage.state = 1;
                     activeStages.push(stage);
@@ -148,12 +156,11 @@ define("mod/mainloop", ["mod/lang"], function(_){
                 stageLib[name] = {
                     name: name,
                     ctx: ctx,
-                    state: 1,
+                    state: 0,
                     lastLoop: 0,
                     pauseTime: 0,
                     renders: _.fnQueue()
                 };
-                activeStages.push(stageLib[name]);
             }
             return this;
         },
@@ -166,7 +173,7 @@ define("mod/mainloop", ["mod/lang"], function(_){
             return this;
         },
 
-        animate: function(name, current, end, duration, opt){
+        addAnimate: function(name, current, end, duration, opt){
             var self = this;
             if (opt.delay && !opt.delayed) {
                 var args = arguments;
@@ -175,7 +182,7 @@ define("mod/mainloop", ["mod/lang"], function(_){
                 }
                 setTimeout(function(){
                     opt.delayed = true;
-                    self.animate.apply(self, args);
+                    self.addAnimate.apply(self, args);
                 }, opt.delay);
                 return this;
             }
