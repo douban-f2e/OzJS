@@ -288,3 +288,11 @@ a:hover {
     margin:0 10px;
     font-style:normal;
 }
+code,var{
+    font-size:16px;
+    padding:0;
+    margin:0;
+    font-style:normal;
+    color:#fff;
+    font-weight:600;
+}
