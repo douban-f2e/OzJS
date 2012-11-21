@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ChoreoJS ("mod/choreo")</title>
+<link href="css/main.css" media="screen" rel="stylesheet" type="text/css" />
+<style>
+.wrapper{
+    position:relative;
+    height:200px;
+}
+#box{
+    height:100px;
+    position:absolute;
+    top:0px;
+    right:20px;
+    background:#666;
+    color:#fff;
+    overflow:hidden;
+}
+.sprite{
+    width:50px;
+    height:50px;
+    background:#000;
+    position:absolute;
+    top:100px;left:20px;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+}
+</style>
+</head>
+<body>
+
+<h1>ChoreoJS ("mod/choreo")</h1>
+<h6></h6>
+
+<div class="article">
+
+<h5>Get the code: <a href="http://github.com/dexteryy/OzJS/blob/master/mod/choreo.js">choreo.js</a></h5>
+<h5>Source code for the demo: <a href="http://github.com/dexteryy/OzJS/tree/master/examples/choreo">View on Github</a></h5>
+<h5>Running result of the demo: </h5>
+
+<div class="wrapper">
+
+    <div id="box" style="width:10%">
+    I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated I cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciatedI cant get this to work. Could you provide the appropiate HTML to go with this Javascript?  Its not obviously clear whats needed, as I’ve tried all sorts of combinations of name values and such.  Any help would be appreciated 
+    </div>
+
+    <div class="sprite"></div>
+
+</div>
+
+<h5>API and usage:</h5>
+<p><code>var choreo = require('mod/choreo');</code></p>
+<ul>
+<li><var>choreo.config(opt)</var> -- </li>
+<li><var>choreo.transform(elm, prop, value)</var> -- </li>
+<li><var>choreo.Stage(name)</var> -- </li>
+<li><var>choreo.Actor(opt|actors, stage)</var> -- </li>
+</ul>
+<p><code>var stage = choreo('stageName[optional]'); // Singleton with stageName</code></p>
+<ul>
+<li><var>stage.isPlaying()</var> -- </li>
+<li><var>stage.isCompleted()</var> -- </li>
+<li><var>stage.play()</var> -- </li>
+<li><var>stage.pause()</var> -- </li>
+<li><var>stage.complete()</var> -- </li>
+<li><var>stage.cancel()</var> -- </li>
+<li><var>stage.clear()</var> -- </li>
+<li><var>stage.actor(opt)</var> -- </li>
+<li><var>stage.group(actor, actor, ...)</var> -- </li>
+<li><var>stage.follow()</var> -- </li>
+</ul>
+<p><code>var actor1 = stage.actor(elment, prop, duration, easeing, delay);
+var actor2 = stage.actor(option, option);
+var actorGroup = stage.group(actor1, actor2);</code></p>
+<ul>
+<li><var>actor.enter(stage)</var> -- </li>
+<li><var>actor.exit()</var> -- </li>
+<li><var>actor.fork()</var> -- </li>
+<li><var>actor.setto(value)</var> -- </li>
+<li><var>actor.extendto(value)</var> -- </li>
+<li><var>actor.reverse()</var> -- </li>
+<li><var>actor.follow()</var> -- </li>
+</ul>
+<p><code>var promise = stage.follow(); // or actor1.follow(), actorGroup.follow()</code></p>
+<ul>
+<li><var>promise.then()</var> -- </li>
+<li><var>promise.done()</var> -- </li>
+<li><var>promise.fail()</var> -- </li>
+<li><var>promise.bind()</var> -- </li>
+<li><var>...</var> -- see 'mod/event'</li>
+</ul>
+<p>Under construction...</p>
+
+</div>
+
+<script src="../../oz.js"></script>
+<script src="test.js"></script>
+<script>
+</script>
+</body>
+</html>

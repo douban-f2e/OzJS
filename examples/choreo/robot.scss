@@ -1,0 +1,447 @@
+@import "compass/css3";
+
+.robot {
+  $cell: 30px;
+  $zone-width: 150px;
+  $zone-height: 400px;
+  $originX: $zone-width/2;
+  $originY: $zone-height/2;
+
+  $unit-height: $cell * 2;
+  $unit-width: $unit-height * 12/7;
+
+  $joint-unit: $cell * 2/3;
+  $gap: 0 - $cell * 3/10;
+
+  $head-width: $unit-width;
+  $head-height: $unit-height;
+
+  $neck-width: $unit-width * 2/3;
+  $neck-height: $unit-height * 1/3 - $gap;
+
+  $body-width: $unit-width / (4/7);
+  $body-height: $unit-height * (3 - 1 - 1/3 * 1/2) - $neck-height - $gap;
+
+  $joint-arm-size: $joint-unit;
+
+  $arm-width: $unit-height * 2/5;
+  $arm-height: $body-height;
+
+  $joint-forearm-size: $joint-unit;
+
+  $forearm-width: $arm-width * 8/9;
+  $forearm-height: $unit-height * (1 + 1/3 + 1/3 * 1/2) - $joint-unit;
+
+  $joint-hand-size: $joint-unit;
+
+  $hand-width: $arm-width;
+  $hand-height: $unit-height * 1/3;
+
+  $joint-waist-width: $body-width * 5/7;
+  $joint-waist-height: $unit-height * (1/3 + 1/3 * 1/2) - $gap;
+
+  $waist-width: $body-width;
+  $waist-height: $unit-height * (2/3);
+
+  $joint-ham-size: $joint-unit;
+
+  $ham-width: $body-width * 13/27;
+  $ham-height: $unit-height * 2 - $joint-unit - $gap;
+
+  $joint-shank-size: $joint-unit;
+
+  $shank-width: $ham-width * 2/3;
+  $shank-height: $unit-height * (2 - 1/2);
+
+  $joint-foot-size: $joint-unit;
+
+  $foot-width: $ham-width * 4/5;
+  $foot-height: $unit-height * (1/2);
+
+
+  $waist-x: $originX - $waist-width/2;
+  $waist-y: $originY - $waist-height/2;
+
+  $joint-waist-x: $waist-x + $waist-width/2 - $joint-waist-width/2;
+  $joint-waist-y: $waist-y - $joint-waist-height - $gap;
+
+  $body-x: $joint-waist-x + $joint-waist-width/2 - $body-width/2;
+  $body-y: $joint-waist-y - $body-height - $gap;
+
+  $neck-x: $body-x + $body-width/2 - $neck-width/2;
+  $neck-y: $body-y - $neck-height - $gap;
+
+  $head-x: $neck-x + $neck-width/2 - $head-width/2;
+  $head-y: $neck-y - $head-height - $gap;
+
+  $joint-arm-left-x: $body-x - $joint-arm-size - $gap;
+  $joint-arm-left-y: $body-y - $gap;
+
+  $joint-arm-right-x: $body-x + $body-width + $gap;
+  $joint-arm-right-y: $body-y - $gap;
+
+  $arm-left-x: $joint-arm-left-x - $arm-width - $gap;
+  $arm-left-y: $joint-arm-left-y + $gap;
+
+  $arm-right-x: $joint-arm-right-x + $joint-arm-size + $gap;
+  $arm-right-y: $joint-arm-right-y + $gap;
+
+  $joint-forearm-left-x: $arm-left-x + $arm-width/2 - $joint-forearm-size/2;
+  $joint-forearm-left-y: $arm-left-y + $arm-height + $gap;
+
+  $joint-forearm-right-x: $arm-right-x + $arm-width/2 - $joint-forearm-size/2;
+  $joint-forearm-right-y: $arm-right-y + $arm-height + $gap;
+
+  $forearm-left-x: $joint-forearm-left-x + $joint-forearm-size/2 - $forearm-width/2;
+  $forearm-left-y: $joint-forearm-left-y + $joint-forearm-size + $gap;
+
+  $forearm-right-x: $joint-forearm-right-x + $joint-forearm-size/2 - $forearm-width/2;
+  $forearm-right-y: $joint-forearm-right-y + $joint-forearm-size + $gap;
+
+  $joint-hand-left-x: $forearm-left-x + $forearm-width/2 - $joint-hand-size/2;
+  $joint-hand-left-y: $forearm-left-y + $forearm-height + $gap;
+
+  $joint-hand-right-x: $forearm-right-x + $forearm-width/2 - $joint-hand-size/2;
+  $joint-hand-right-y: $forearm-right-y + $forearm-height + $gap;
+
+  $hand-left-x: $joint-hand-left-x + $joint-hand-size/2 - $hand-width/2;
+  $hand-left-y: $joint-hand-left-y + $joint-hand-size + $gap;
+
+  $hand-right-x: $joint-hand-right-x+ $joint-hand-size/2 - $hand-width/2;
+  $hand-right-y: $joint-hand-right-y + $joint-hand-size + $gap;
+
+  $joint-ham-left-x: $waist-x + $waist-width*1/4 - $joint-ham-size/2;
+  $joint-ham-left-y: $waist-y + $waist-height + $gap;
+
+  $joint-ham-right-x: $waist-x + $waist-width*3/4 - $joint-ham-size/2;
+  $joint-ham-right-y: $waist-y + $waist-height + $gap;
+
+  $ham-left-x: $joint-ham-left-x + $joint-ham-size/2 - $ham-width/2;
+  $ham-left-y: $joint-ham-left-y + $joint-ham-size + $gap;
+
+  $ham-right-x: $joint-ham-right-x + $joint-ham-size/2 - $ham-width/2;
+  $ham-right-y: $joint-ham-right-y + $joint-ham-size + $gap;
+
+  $joint-shank-left-x: $ham-left-x + $ham-width * 4/7 - $joint-shank-size/2;
+  $joint-shank-left-y: $ham-left-y + $ham-height + $gap;
+
+  $joint-shank-right-x: $ham-right-x + $ham-width * 3/7 - $joint-shank-size/2;
+  $joint-shank-right-y: $ham-right-y + $ham-height + $gap;
+
+  $shank-left-x: $joint-shank-left-x + $joint-shank-size/2 - $shank-width/2;
+  $shank-left-y: $joint-shank-left-y + $joint-shank-size + $gap;
+
+  $shank-right-x: $joint-shank-right-x + $joint-shank-size/2 - $shank-width/2;
+  $shank-right-y: $joint-shank-right-y + $joint-shank-size + $gap;
+
+  $joint-foot-left-x: $shank-left-x + $shank-width/2 - $joint-foot-size/2;
+  $joint-foot-left-y: $shank-left-y + $shank-height + $gap;
+
+  $joint-foot-right-x: $shank-right-x + $shank-width/2 - $joint-foot-size/2;
+  $joint-foot-right-y: $shank-right-y + $shank-height + $gap;
+
+  $foot-left-x: $joint-foot-left-x + $joint-foot-size/2 - $foot-width/2;
+  $foot-left-y: $joint-foot-left-y + $joint-foot-size + $gap;
+
+  $foot-right-x: $joint-foot-right-x + $joint-foot-size/2 - $foot-width/2;
+  $foot-right-y: $joint-foot-right-y + $joint-foot-size + $gap;
+
+  @mixin joint {
+    z-index: 10;
+    opacity:0.6;
+  }
+
+  width: $zone-width;
+  height: $zone-height;
+  position:relative;
+  background:#eee;
+  margin:10px auto;
+
+  div {
+    background:#000;
+    opacity:0.6;
+    height:100px;
+    width:10px;
+    position:absolute;
+    z-index: 20;
+  }
+
+  .joint{
+    z-index: 10;
+    opacity:0.6;
+    @include border-radius($joint-unit/2);
+  }
+
+  .arm{
+    width: $arm-width;
+    height: $arm-height;
+    @include border-bottom-right-radius($arm-width * 1/2);
+    @include border-bottom-left-radius($arm-width * 1/2);
+  }
+
+  .forearm{
+    width: $forearm-width;
+    height: $forearm-height;
+    @include border-radius($forearm-width * 1/2);
+  }
+
+  .hand{
+    width: $hand-width;
+    height: $hand-height;
+    @include border-top-left-radius($hand-width * 1/2);
+    @include border-top-right-radius($hand-width * 1/2);
+    @include border-bottom-right-radius($hand-width * 4);
+    @include border-bottom-left-radius($hand-width * 4);
+  }
+
+  .ham{
+    width: $ham-width;
+    height: $ham-height;
+    @include border-top-left-radius($ham-width * 2);
+    @include border-top-right-radius($ham-width * 2);
+    @include border-bottom-right-radius($ham-width * 4);
+    @include border-bottom-left-radius($ham-width * 4);
+  }
+
+  .shark{
+    width: $shank-width;
+    height: $shank-height;
+    @include border-radius($shank-width * 1/3);
+  }
+
+  .foot{
+    width: $foot-width;
+    height: $foot-height;
+    @include border-top-left-radius($foot-width);
+    @include border-top-right-radius($foot-width);
+    @include border-bottom-right-radius($foot-width * 1/2);
+    @include border-bottom-left-radius($foot-width * 1/2);
+  }
+
+  .head {
+    width: $head-width;
+    height: $head-height;
+    left: $head-x;
+    top: $head-y;
+    @include border-radius($head-width/2);
+  }
+
+  .neck {
+    width: $neck-width;
+    height: $neck-height;
+    left: $neck-x;
+    top: $neck-y;
+    @include border-radius($neck-width * 1/4);
+  }
+
+  .body {
+    width: $body-width;
+    height: $body-height;
+    left: $body-x;
+    top: $body-y;
+    @include border-top-left-radius($waist-width * 1/12);
+    @include border-top-right-radius($waist-width * 1/12);
+    @include border-bottom-right-radius($waist-width * 3/7);
+    @include border-bottom-left-radius($waist-width * 3/7);
+  }
+
+  .joint-arm-left{
+    width: $joint-arm-size;
+    height: $joint-arm-size;
+    left: $joint-arm-left-x;
+    top: $joint-arm-left-y;
+    @extend .joint;
+  }
+
+  .arm-left {
+    left: $arm-left-x;
+    top: $arm-left-y;
+    @extend .arm;
+    @include border-top-left-radius($arm-width);
+    @include border-top-right-radius($arm-width * 1/3);
+  }
+
+  .joint-forearm-left{
+    width: $joint-forearm-size;
+    height: $joint-forearm-size;
+    left: $joint-forearm-left-x;
+    top: $joint-forearm-left-y;
+    @extend .joint;
+  }
+
+  .forearm-left {
+    left: $forearm-left-x;
+    top: $forearm-left-y;
+    @extend .forearm;
+  }
+
+  .joint-hand-left{
+    width: $joint-hand-size;
+    height: $joint-hand-size;
+    left: $joint-hand-left-x;
+    top: $joint-hand-left-y;
+    @extend .joint;
+  }
+
+  .hand-left {
+    left: $hand-left-x;
+    top: $hand-left-y;
+    @extend .hand;
+  }
+
+  .joint-arm-right{
+    width: $joint-arm-size;
+    height: $joint-arm-size;
+    left: $joint-arm-right-x;
+    top: $joint-arm-right-y;
+    @extend .joint;
+  }
+
+  .arm-right {
+    left: $arm-right-x;
+    top: $arm-right-y;
+    @extend .arm;
+    @include border-top-right-radius($arm-width);
+    @include border-top-left-radius($arm-width * 1/3);
+  }
+
+  .joint-forearm-right{
+    width: $joint-forearm-size;
+    height: $joint-forearm-size;
+    left: $joint-forearm-right-x;
+    top: $joint-forearm-right-y;
+    @extend .joint;
+  }
+
+  .forearm-right {
+    left: $forearm-right-x;
+    top: $forearm-right-y;
+    @extend .forearm;
+  }
+
+  .joint-hand-right{
+    width: $joint-hand-size;
+    height: $joint-hand-size;
+    left: $joint-hand-right-x;
+    top: $joint-hand-right-y;
+    @extend .joint;
+  }
+
+  .hand-right {
+    left: $hand-right-x;
+    top: $hand-right-y;
+    @extend .hand;
+  }
+
+  .joint-waist {
+    width: $joint-waist-width;
+    height: $joint-waist-height;
+    left: $joint-waist-x;
+    top: $joint-waist-y;
+    @include border-top-left-radius($joint-waist-width * 1/12);
+    @include border-top-right-radius($joint-waist-width * 1/12);
+    @include border-bottom-right-radius($joint-waist-width * 1/2);
+    @include border-bottom-left-radius($joint-waist-width * 1/2);
+  }
+
+  .waist {
+    width: $waist-width;
+    height: $waist-height;
+    left: $waist-x;
+    top: $waist-y;
+    @include border-top-right-radius($waist-width * 4);
+    @include border-top-left-radius($waist-width * 4);
+    @include border-bottom-right-radius($waist-width * 2);
+    @include border-bottom-left-radius($waist-width * 2);
+  }
+
+  .joint-ham-left {
+    width: $joint-ham-size;
+    height: $joint-ham-size;
+    left: $joint-ham-left-x;
+    top: $joint-ham-left-y;
+    @extend .joint;
+  }
+
+  .ham-left {
+    left: $ham-left-x;
+    top: $ham-left-y;
+    @extend .ham;
+    @include border-bottom-left-radius($ham-width * 10);
+  }
+
+  .joint-shank-left {
+    width: $joint-shank-size;
+    height: $joint-shank-size;
+    left: $joint-shank-left-x;
+    top: $joint-shank-left-y;
+    @extend .joint;
+  }
+
+  .shank-left {
+    left: $shank-left-x;
+    top: $shank-left-y;
+    @extend .shark;
+  }
+
+  .joint-foot-left {
+    width: $joint-foot-size;
+    height: $joint-foot-size;
+    left: $joint-foot-left-x;
+    top: $joint-foot-left-y;
+    @extend .joint;
+  }
+
+  .foot-left {
+    left: $foot-left-x;
+    top: $foot-left-y;
+    @extend .foot;
+  }
+
+  .joint-ham-right {
+    width: $joint-ham-size;
+    height: $joint-ham-size;
+    left: $joint-ham-right-x;
+    top: $joint-ham-right-y;
+    @extend .joint;
+  }
+
+  .ham-right {
+    left: $ham-right-x;
+    top: $ham-right-y;
+    @extend .ham;
+    @include border-bottom-right-radius($ham-width * 10);
+  }
+
+  .joint-shank-right {
+    width: $joint-shank-size;
+    height: $joint-shank-size;
+    left: $joint-shank-right-x;
+    top: $joint-shank-right-y;
+    @extend .joint;
+  }
+
+  .shank-right {
+    left: $shank-right-x;
+    top: $shank-right-y;
+    @extend .shark;
+  }
+
+  .joint-foot-right {
+    width: $joint-foot-size;
+    height: $joint-foot-size;
+    left: $joint-foot-right-x;
+    top: $joint-foot-right-y;
+    @extend .joint;
+  }
+
+  .foot-right {
+    left: $foot-right-x;
+    top: $foot-right-y;
+    @extend .foot;
+  }
+
+
+
+}
+
