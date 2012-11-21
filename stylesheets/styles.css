@@ -152,13 +152,13 @@ img {
 
 /* Code blocks */
 
-code, pre {
+code, var, pre {
 	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color:#000;
   font-size:14px;
 }
 
-code {
+code, var {
   background: #fff;
   border: 1px solid #eee;
   padding: 0 4px;
@@ -171,9 +171,13 @@ pre {
   border:1px solid #D7D8C8;
   overflow: auto;
   overflow-y: hidden;
-	margin-bottom: 32px;
+	margin: 22px 0;
 }
-
+pre code, pre var{
+  background:none;
+  border:0;
+  padding:0;
+}
 
 /* Tables */
 
@@ -217,16 +221,13 @@ header {
   height:100%;
   float:left;
   position:fixed;
-	border: 1px solid #000;
-	-webkit-border-top-right-radius: 4px;
-	-webkit-border-bottom-right-radius: 4px;
-	-moz-border-radius-topright: 4px;
-	-moz-border-radius-bottomright: 4px;
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-	padding: 34px 25px 22px 25px;
+  -moz-box-shadow:1px 0px 3px #333;
+  -webkit-box-shadow:1px 0px 3px #333;
+  box-shadow:1px 0px 3px #333;
+	padding: 20px 25px 20px 25px;
 	-webkit-font-smoothing: antialiased;
   overflow:hidden;
+  z-index:2;
 }
 
 p.header {
@@ -234,7 +235,7 @@ p.header {
   padding:10px 0;
 }
 
-h1.header {
+p.logo {
 	font-family: Arvo, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
@@ -248,7 +249,7 @@ h1.header {
 }
 
 
-h1.header, a.header, a.name, header a{
+p.logo, a.header, a.name, header a{
 	color: #fff;
 }
 
@@ -317,11 +318,52 @@ a.buttons:hover {
 	text-decoration: none;
 }
 
+nav{
+	background-color: #AF0011;
+	color: #fff;
+  width:140px;
+  height:100%;
+  float:left;
+  position:fixed;
+  left:220px;
+  -moz-box-shadow:1px 0px 3px #666;
+  -webkit-box-shadow:1px 0px 3px #666;
+  box-shadow:1px 0px 3px #666;
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	padding: 20px 0;
+	-webkit-font-smoothing: antialiased;
+  overflow:hidden;
+}
+nav ul li{
+  padding-left:20px;
+}
+nav ul li ul{
+  padding:10px 0;
+  border-bottom:1px dashed #C30000;
+}
+nav a{
+	color: #fff;
+}
+nav > ul > li{
+  list-style:none;
+  padding:0;
+}
+nav > ul > li > a{
+  display:block;
+  padding:5px 0 5px 15px;
+  border-bottom:1px dashed #C30000;
+}
+
 
 /* Section - for main page content */
 
 section {
-  width:650px;
+  width:550px;
   float:right;
   padding-bottom:50px;
 	background-color: #FBFAF7;
@@ -331,7 +373,7 @@ section {
 /* Footer */
 
 footer {
-  width:650px;
+  width:550px;
   float:right;
   border-top: 1px solid #ccc;
   text-align:center;
@@ -344,19 +386,24 @@ footer {
     margin:0;
   }
 
-  header, section, footer {
+  header, nav, section, footer {
     float:none;
     position:static;
     width:auto;
+  }
+  
+  header {
+    padding:20px 20px 0;
+		margin-right: 0;
+  }
+
+  nav {
+    display:none;
   }
 
 	footer {
 		margin:0 84px 0 50px;
 	}
-
-  header {
-    /*padding-right:320px;*/
-  }
 
   section {
     padding:20px 84px 20px 50px;
@@ -367,7 +414,7 @@ footer {
     display:inline;
   }
 
-  h1.header{
+  p.logo{
     width:163px;
     float:left;
   }
@@ -382,11 +429,6 @@ footer {
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
-  }
-
-  header {
-    padding:10px 20px 0;
-		margin-right: 0;
   }
 
 	section {
