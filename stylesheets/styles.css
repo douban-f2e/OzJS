@@ -26,7 +26,6 @@ time, mark, audio, video {
 /* Base text styles */
 
 body {
-  padding:10px 50px 0 0;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #232323;
@@ -43,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, ol, table, dl {
-  margin:0 0 22px;
+  margin:0 0 0 0;
 }
 
 h1, h2, h3 {
@@ -73,6 +72,7 @@ h3 {
 h4, h5, h6 {
 	font-family: Arvo, Monaco, serif;
 	font-weight: 700;
+  margin:20px 0 5px;
 }
 
 a {
@@ -158,6 +158,12 @@ code, pre {
   font-size:14px;
 }
 
+code {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 0 4px;
+}
+
 pre {
 	padding: 4px 12px;
   background: #FDFEFB;
@@ -208,6 +214,7 @@ header {
 	background-color: #171717;
 	color: #FDFDFB;
   width:170px;
+  height:100%;
   float:left;
   position:fixed;
 	border: 1px solid #000;
@@ -217,13 +224,14 @@ header {
 	-moz-border-radius-bottomright: 4px;
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
-	padding: 34px 25px 22px 50px;
-	margin: 30px 25px 0 0;
+	padding: 34px 25px 22px 25px;
 	-webkit-font-smoothing: antialiased;
+  overflow:hidden;
 }
 
 p.header {
-	font-size: 16px;
+	font-size: 14px;
+  padding:10px 0;
 }
 
 h1.header {
@@ -233,6 +241,10 @@ h1.header {
 	line-height: 1.3em;
 	border-bottom: none;
 	margin-top: 0;
+  background:url(../images/ozjs_logo_1.png) no-repeat top left;
+  height:250px;
+  text-indent:-3000px;
+  overflow:hidden;
 }
 
 
@@ -312,17 +324,17 @@ section {
   width:650px;
   float:right;
   padding-bottom:50px;
+	background-color: #FBFAF7;
 }
 
 
 /* Footer */
 
 footer {
-  width:170px;
-  float:left;
-  position:fixed;
-  bottom:10px;
-	padding-left: 50px;
+  width:650px;
+  float:right;
+  border-top: 1px solid #ccc;
+  text-align:center;
 }
 
 @media print, screen and (max-width: 960px) {
@@ -339,13 +351,11 @@ footer {
   }
 
 	footer {
-		border-top: 1px solid #ccc;
 		margin:0 84px 0 50px;
-		padding:0;
 	}
 
   header {
-    padding-right:320px;
+    /*padding-right:320px;*/
   }
 
   section {
@@ -357,11 +367,16 @@ footer {
     display:inline;
   }
 
-  header ul {
-    position:absolute;
-    right:130px;
-    top:84px;
+  h1.header{
+    width:163px;
+    float:left;
   }
+
+  p.header,
+  header ul{
+    padding-left:200px;
+  }
+
 }
 
 @media print, screen and (max-width: 720px) {
@@ -375,7 +390,7 @@ footer {
   }
 
 	section {
-    padding:10px 0 10px 20px;
+    padding:10px 10px 10px 20px;
     margin:0 0 30px;
   }
 
@@ -383,12 +398,13 @@ footer {
 		margin: 0 0 0 30px;
 	}
 
-  header ul, header p.view {
-    position:static;
-  }
 }
 
 @media print, screen and (max-width: 480px) {
+
+  header ul, header p.view {
+    position:static;
+  }
 
   header ul li.download {
     display:none;
