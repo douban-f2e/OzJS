@@ -1,4 +1,6 @@
 /**
+ * ES5/6 shim and minimum utilities for language enhancement
+ *
  * using AMD (Asynchronous Module Definition) API with OzJS
  * see http://dexteryy.github.com/OzJS/ for details
  *
@@ -173,6 +175,14 @@ define("mod/lang", ["host"], function(host, require, exports){
     exports.type = type;
     exports.isFunction = oz._isFunction;
     exports.isWindow = oz._isWindow;
+
+	exports.isEmptyObject = function(obj) {
+        for (var name in obj) {
+            return false;
+        }
+        return true;
+	};
+    
     exports.semver = oz._semver;
 
     function mix(origin) {
