@@ -1,16 +1,63 @@
----
-title: Ozma / Demo3
----
 <!DOCTYPE html>
 <html>
 <head>
-{% include header.html %}
+<meta charset="utf-8">
+
+<title>Ozma / Demo3</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
 <style>
 </style>
 </head>
 <body>
 
-{% include nav.html %}
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
 
 <div class="wrapper">
 <section>
@@ -23,10 +70,11 @@ title: Ozma / Demo3
 
 <h2>How to build distribution file of the demo: </h2>
 <p><a href="../">How to install Ozma.js</a></p>
-{% highlight bash %}
-cd examples/buildtool/
+<div class="highlight"><pre><code class="bash"><span class="nb">cd </span>examples/buildtool/
 ozma js/main.js
-{% endhighlight %}
+</code></pre>
+</div>
+
 
 <h2>Running result of the demo: </h2>
 <ol>
@@ -44,13 +92,14 @@ ozma js/main.js
     <li>构建过程中使用的源码文件都来自<var>ozconfig.json</var>中配置的<var>baseUrl</var>，而生成的发布文件都位于<var>distUrl</var>中，由于配置中有<var>disableAutoSuffix</var>，所以发布文件与源文件保持同名（默认状态下会自动加后缀，见示例1的说明。</li>
     <li>当页面用构建后生成的主发布文件替代<var>js/main.js</var>，<var>main.js</var>中配置的<var>distUrl</var>会替代<var>baseUrl</var>的作用，所有动态加载的模块（如<var>lazy/A</var>）会自动指向构建工具为它们生成的发布文件（如<var>dist/lazy/A.js</var>）。</li>
     <li>如果生产环境中的静态文件使用CDN中的URL（包含时间戳或版本号），需要由服务器端模版将动态加载的模块指向发布文件在CDN中的实际URL，例如将以下代码添加到本页的底部：</li>
-{% highlight javascript %}
-define('lazy/A', 'CDN_DOMAIN/dist/lazy/A.js');
-define('lazy/C', 'CDN_DOMAIN/dist/lazy/C.js');
-define('lazy/Z', 'CDN_DOMAIN/dist/lazy/Z.js');
-define('lazy/XY', 'CDN_DOMAIN/dist/lazy/XY.js');
-define('non_AMD/script_1', 'CDN_DOMAIN/dist/non_AMD/script_1.js');
-{% endhighlight %}
+<div class="highlight"><pre><code class="javascript"><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;lazy/A&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_DOMAIN/dist/lazy/A.js&#39;</span><span class="p">);</span>
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;lazy/C&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_DOMAIN/dist/lazy/C.js&#39;</span><span class="p">);</span>
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;lazy/Z&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_DOMAIN/dist/lazy/Z.js&#39;</span><span class="p">);</span>
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;lazy/XY&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_DOMAIN/dist/lazy/XY.js&#39;</span><span class="p">);</span>
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;non_AMD/script_1&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_DOMAIN/dist/non_AMD/script_1.js&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
 </ul>
 
 </section>
@@ -62,4 +111,7 @@ var _main_domain_ = 'http://www.xxx.com';
 <script src="../../../js/lib/oz.js"></script>
 <script src="dist/main.js"></script>
 
-{% include footer.html %}
+
+</body>
+</html>
+

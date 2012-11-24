@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Mo</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_94">Mo</h1>
+
+<blockquote>
+<ul>
+<li>A collection of OzJS core modules that form a library called &quot;Mo&quot; </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_95">AMD and OzJS</h2>
+
+<ul>
+<li>Mo can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
+<li>It&#39;s wrapped as a number of mutually independent <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD (Asynchronous Module Definition)</a> modules. You should use them with <a href="http://ozjs.org/#start">oz.js</a> (or require.js or <a href="http://wiki.commonjs.org/wiki/Implementations">similar</a> for handling dependencies). </li>
+<li>If you want to make them available for both other AMD code and traditional code based on global namespace. OzJS provides <a href="http://ozjs.org/examples/adapter/">a mini define/require implementation</a> to transform AMD module into traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>.</li>
+<li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
+</ul>
+
+<h2 id="toc_96">Modules Overview</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/mo/blob/master/lang.js">mo/lang</a>: 
+
+<ul>
+<li>ES5/6 shim and minimum utilities for language enhancement</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/domready.js">mo/domready</a>: 
+
+<ul>
+<li>Non-plugin implementation of cross-browser DOM ready event</li>
+<li>Based on OzJS&#39;s built-in module -- &#39;finish&#39;</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/browsers.js">mo/browsers</a>: 
+
+<ul>
+<li>Standalone jQuery.browsers supports skin browsers popular in China </li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/cookie.js">mo/cookie</a>: 
+
+<ul>
+<li>Simple wrapping for managing cookie </li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/template.js">mo/template</a>: 
+
+<ul>
+<li>A lightweight and enhanced micro-template implementation, and minimum utilities</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/network.js">mo/network</a>: 
+
+<ul>
+<li>Standalone jQuery.ajax API and enhanced getJSON, and so on</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/easing.js">mo/easing</a>: 
+
+<ul>
+<li>An easing library supports jquery.js, standalone module and CSS timing functions</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/mainloop.js">mo/mainloop</a>: 
+
+<ul>
+<li>Implement and manage single loop for WebApp life cycle</li>
+<li>Provide tweening API for both property animation and frame animation(canvas or css)</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/key.js">mo/key</a>: 
+
+<ul>
+<li>Wrapping API for keyboard events</li>
+<li>Support key sequence, multiple key press, ...</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_97">Examples</h2>
+
+<ul>
+<li><a href="http://ozjs.org/mo/examples/lang">demo for mo/lang</a></li>
+</ul>
+
+<h2 id="toc_98">Get the code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/moui/blob/master/">View/download on Github</a></li>
+<li>Add/update to your project as new dependency:
+
+<ul>
+<li>via <a href="https://github.com/mockee/istatic.git">istatic</a></li>
+<li>via <a href="https://github.com/volojs/volo">volo</a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_99">API and usage</h2>
+
+<h3 id="toc_100">mo/lang</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/lang&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>_.type(sth)</code> -- </li>
+<li><code>_.isFunction(sth)</code> -- </li>
+<li><code>_.isWindow(sth)</code> -- </li>
+<li><code>_.isEmptyObject(sth)</code> -- </li>
+<li><code>_.mix(origin, obj1, obj2, ..., depth)</code> -- </li>
+<li><code>_.merge(origin, obj1, obj2, ..., depth)</code> -- </li>
+<li><code>_.interset(origin, obj1, obj2, ..., depth)</code> -- </li>
+<li><code>_.defaults(origin, obj1, obj2, ..., depth)</code> -- </li>
+<li><code>_.copy(origin, depth)</code> -- </li>
+<li><code>_.occupy(origin, obj, depth)</code> -- </li>
+<li><code>_.config(cfg, opt, DEFAULT_CFG)</code> -- </li>
+<li><code>_.unique(list)</code> -- </li>
+<li><code>_.ns(string, value)</code> -- </li>
+<li><code>_.FnQueue()</code> -- </li>
+<li><code>_.semver(version1, version2)</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Add ES5 methods in browsers that don&#39;t natively support them:</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>Array.prototype.forEach</code></li>
+<li><code>Array.prototype.map</code></li>
+<li><code>Array.prototype.filter</code></li>
+<li><code>Array.prototype.reduce</code></li>
+<li><code>Array.prototype.some</code></li>
+<li><code>Array.prototype.every</code></li>
+<li><code>Array.prototype.indexOf</code></li>
+<li><code>Array.prototype.lastIndexOf</code></li>
+<li><code>Array.isArray</code></li>
+<li><code>String.prototype.trim</code></li>
+<li><code>Object.keys</code></li>
+<li><code>Object.create</code></li>
+<li><code>Object.getPrototypeOf</code></li>
+<li><code>Function.prototype.bind</code></li>
+</ul>
+
+<h3 id="toc_101">mo/domready</h3>
+<div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;mo/domready&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">none</span><span class="p">){</span>
+    <span class="c1">// won&#39;t execute until the page&#39;s entire DOM has loaded</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="toc_102">mo/browsers</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">browsers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/browsers&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>browsers.browser</code> --</li>
+<li><code>browsers.version</code> -- </li>
+<li><code>browsers.skin</code> -- </li>
+<li><code>browsers.rank</code> -- </li>
+<li><code>browsers[&#39;msie&#39;|&#39;webkit&#39;|&#39;mozilla&#39;|...]</code> --</li>
+</ul>
+
+<h3 id="toc_103">mo/browsers</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/cookie&#39;</span><span class="p">);</span>
+
+<span class="nx">cookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">domain</span><span class="o">:</span> <span class="s1">&#39;ozjs.org&#39;</span><span class="p">,</span> <span class="c1">// &#39;&#39; as default</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="c1">// &#39;&#39; as default</span>
+    <span class="nx">expires</span><span class="o">:</span> <span class="mi">365</span> <span class="c1">// day,</span>
+    <span class="nx">secure</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="toc_104">mo/template</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/template&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>tpl.escapeHTML(string)</code> -- </li>
+<li><code>tpl.substr(string, limit, callback)</code> -- </li>
+<li><code>tpl.strsize(string)</code> -- </li>
+<li><code>tpl.str2html(string)</code> -- </li>
+<li><code>tpl.format(string, dict|list)</code> -- </li>
+<li><code>tpl.convertTpl(tplName|tplString, dictData, namespace)</code> -- </li>
+<li><code>tpl.reloadTpl(tplName)</code> -- </li>
+</ul>
+
+<h3 id="toc_105">mo/network</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/network&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>net.ajax(options)</code> -- </li>
+<li><code>net.params(data)</code> -- </li>
+<li><code>net.getScript(url, callback)</code> -- </li>
+<li><code>net.getStyle(url)</code> -- </li>
+<li><code>net.getJSON(url, params, callback, options)</code> -- </li>
+<li><code>net.getRequest(url, params)</code> -- </li>
+</ul>
+
+<h3 id="toc_106">mo/easing</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">easingLib</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/easing&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>easingLib.def</code> -- </li>
+<li><code>easingLib.values</code> -- </li>
+<li><code>easingLib.functions</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="c1">// use it as extension of other library</span>
+<span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">[</span><span class="s1">&#39;jswing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">[</span><span class="s1">&#39;swing&#39;</span><span class="p">];</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">,</span> <span class="nx">easingLib</span><span class="p">.</span><span class="nx">functions</span><span class="p">);</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/mainloop&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">easing</span><span class="o">:</span> <span class="nx">easingLib</span><span class="p">.</span><span class="nx">functions</span>
+<span class="p">});</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;choreo&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">easing</span><span class="o">:</span> <span class="nx">easingLib</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h3 id="toc_107">mo/mainloop</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">loop</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/mainloop&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>loop.config(options)</code> -- </li>
+<li><code>loop.run(optional_stageName)</code> -- </li>
+<li><code>loop.pause(stageName)</code> -- </li>
+<li><code>loop.complete(stageName)</code> -- </li>
+<li><code>loop.remove(stageName)</code> -- </li>
+<li><code>loop.info(stageName)</code> -- </li>
+<li><code>loop.isRunning(stageName)</code> -- </li>
+<li><code>loop.addStage(stageName, optional_canvas)</code> -- </li>
+<li><code>loop.addRender(stageName, render, optional_canvas)</code> -- </li>
+<li><code>loop.getRender(renderId)</code> -- </li>
+<li><code>loop.addTween(stageName, current, end, duration, options)</code> -- </li>
+</ul>
+
+<h3 id="toc_108">mo/key</h3>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Key</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/key&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>Key.KEYS_CODE</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">Key</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>key.addHandler(event, keyName, handler)</code> -- </li>
+<li><code>key.down([keyName, ...], handler)</code> -- </li>
+<li><code>key.up([keyName, ...], handler)</code> -- </li>
+<li><code>key.press([keyName, ...], handler)</code> -- </li>
+<li><code>key.reset()</code> -- </li>
+<li><code>key.addRule(fn)</code> -- </li>
+<li><code>key.enable()</code> -- </li>
+<li><code>key.disable()</code> -- </li>
+<li><code>key.check()</code> -- </li>
+</ul>
+
+<p>Under construction...</p>
+
+<h2 id="toc_109">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_110">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_111">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

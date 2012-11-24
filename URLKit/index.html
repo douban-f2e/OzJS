@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>URLKit</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_132">URLKit</h1>
+
+<blockquote>
+<ul>
+<li>A lightweight implementation of routing and URL manager</li>
+<li>Automatic switch between html5 History API and IE&#39;s hashbang</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_133">AMD and OzJS</h2>
+
+<ul>
+<li>URLKit can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
+<li>It&#39;s wrapped as an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD (Asynchronous Module Definition)</a> module. You should use it with <a href="http://ozjs.org/#start">oz.js</a> (or require.js or <a href="http://wiki.commonjs.org/wiki/Implementations">similar</a> for handling dependencies). </li>
+<li>If you want to make it available for both other AMD code and traditional code based on global namespace. OzJS provides <a href="http://ozjs.org/examples/adapter/">a mini define/require implementation</a> to transform AMD module into traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>.</li>
+<li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
+</ul>
+
+<h2 id="toc_134">Dependencies</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/mo">mo/lang</a></li>
+<li><a href="https://github.com/dexteryy/mo">mo/browsers</a></li>
+</ul>
+
+<h2 id="toc_135">Examples</h2>
+
+<ul>
+<li><a href="http://ozjs.org/URLKit/examples/">demo</a></li>
+</ul>
+
+<h2 id="toc_136">Get the code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/URLKit/blob/master/urlkit.js">View/download on Github</a></li>
+<li>Add/update to your project as new dependency:
+
+<ul>
+<li>via <a href="https://github.com/mockee/istatic.git">istatic</a></li>
+<li>via <a href="https://github.com/volojs/volo">volo</a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_137">API and usage</h2>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">URLKit</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mod/urlkit&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>URLKit.parse(url)</code> -- </li>
+<li><code>URLKit.param(urlObj, options)</code> -- </li>
+<li><code>URLKit.SUPPORT_PUSHSTATE</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URLKit</span><span class="p">({</span>
+    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// optional, &#39;/&#39; for default</span>
+    <span class="nx">win</span><span class="o">:</span> <span class="nb">window</span><span class="p">,</span>  <span class="c1">// optional</span>
+    <span class="nx">autotidy</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// optional, true for default</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>url.listen()</code> -- </li>
+<li><code>url.stop()</code> -- </li>
+<li><code>url.route(rule, handler)</code> -- </li>
+<li><code>url.nav(urlConfig, {
+/* replace: true,
+route: false */
+})</code> -- </li>
+<li><code>url.load(url, options)</code> -- </li>
+<li><code>url.set(options)</code> -- </li>
+<li><code>url.checkRules(url, rules)</code> -- </li>
+<li><code>url.getBaseUrl()</code> -- </li>
+</ul>
+
+<p>Under construction...</p>
+
+<h2 id="toc_138">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_139">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_140">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

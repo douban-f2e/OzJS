@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>DollarJS</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_38">DollarJS</h1>
+
+<blockquote>
+<ul>
+<li>A jQuery-compatible and non-All-in-One library which is more &quot;Zepto&quot; than Zepto.js</li>
+<li>Focus on DOM operations and mobile platform, wrap native API wherever possible.</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_39">AMD and OzJS</h2>
+
+<ul>
+<li>DollarJS can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
+<li>It&#39;s wrapped as an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD (Asynchronous Module Definition)</a> module. You should use it with <a href="http://ozjs.org/#start">oz.js</a> (or require.js or <a href="http://wiki.commonjs.org/wiki/Implementations">similar</a> for handling dependencies). </li>
+<li>If you want to make it available for both other AMD code and traditional code based on global namespace. OzJS provides <a href="http://ozjs.org/examples/adapter/">a mini define/require implementation</a> to transform AMD module into traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>.</li>
+<li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
+</ul>
+
+<h2 id="toc_40">Dependencies</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/mo">mo/lang</a></li>
+<li><a href="https://github.com/dexteryy/OzJS">host</a> (oz.js built-in module, alternate implementation: <code>define(&quot;host&quot;, [], function(){ return window; });</code> )</li>
+</ul>
+
+<h2 id="toc_41">Examples</h2>
+
+<p>Under construction...</p>
+
+<h2 id="toc_42">Get the code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/DollarJS/blob/master/dollar.js">View/download on Github</a></li>
+<li>Add/update to your project as new dependency:
+
+<ul>
+<li>via <a href="https://github.com/mockee/istatic.git">istatic</a></li>
+<li>via <a href="https://github.com/volojs/volo">volo</a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_43">API and usage</h2>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dollar&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>$()</code> -- </li>
+</ul>
+
+<h3 id="toc_44">API for traversing</h3>
+
+<ul>
+<li><code>find()</code> -- </li>
+<li><code>eq()</code> -- </li>
+<li><code>not()</code> -- </li>
+<li><code>has()</code> -- </li>
+<li><code>parent()</code> -- </li>
+<li><code>parents()</code> -- </li>
+<li><code>closest()</code> -- </li>
+<li><code>siblings()</code> -- </li>
+<li><code>next()</code> -- </li>
+<li><code>nextAll()</code> -- </li>
+<li><code>nextUntil()</code> -- </li>
+<li><code>prev()</code> -- </li>
+<li><code>prevAll()</code> -- </li>
+<li><code>prevUntil()</code> -- </li>
+<li><code>children()</code> -- </li>
+<li><code>contents()</code> -- </li>
+</ul>
+
+<h3 id="toc_45">API for detection</h3>
+
+<ul>
+<li><code>is()</code> -- </li>
+<li><code>hasClass()</code> -- </li>
+</ul>
+
+<h3 id="toc_46">API for properties</h3>
+
+<ul>
+<li><code>addClass()</code> -- </li>
+<li><code>removeClass()</code> -- </li>
+<li><code>toggleClass()</code> -- </li>
+<li><code>attr()</code> -- </li>
+<li><code>removeAttr()</code> -- </li>
+<li><code>prop()</code> -- </li>
+<li><code>removeProp()</code> -- </li>
+<li><code>data()</code> -- </li>
+<li><code>removeData()</code> -- </li>
+<li><code>val()</code> -- </li>
+<li><code>empty()</code> -- </li>
+<li><code>html()</code> -- </li>
+<li><code>text()</code> -- </li>
+<li><code>css()</code> -- </li>
+<li><code>hide()</code> -- </li>
+<li><code>show()</code> -- </li>
+</ul>
+
+<h3 id="toc_47">API for dimensions</h3>
+
+<ul>
+<li><code>offset()</code> -- </li>
+<li><code>width()</code> -- </li>
+<li><code>height()</code> -- </li>
+</ul>
+
+<h3 id="toc_48">API for manipulation</h3>
+
+<ul>
+<li><code>appendTo()</code> -- </li>
+<li><code>append()</code> -- </li>
+<li><code>prependTo()</code> -- </li>
+<li><code>prepend()</code> -- </li>
+<li><code>insertBefore()</code> -- </li>
+<li><code>before()</code> -- </li>
+<li><code>insertAfter()</code> -- </li>
+<li><code>after()</code> -- </li>
+<li><code>replaceAll()</code> -- </li>
+<li><code>replaceWith()</code> -- </li>
+<li><code>wrap(boxes)</code> -- </li>
+<li><code>wrapAll()</code> -- </li>
+<li><code>wrapInner()</code> -- </li>
+<li><code>unwrap()</code> -- </li>
+<li><code>remove()</code> -- </li>
+</ul>
+
+<h3 id="toc_49">API for event</h3>
+
+<ul>
+<li><code>bind()</code> -- </li>
+<li><code>unbind()</code> -- </li>
+<li><code>trigger()</code> -- </li>
+</ul>
+
+<h3 id="toc_50">API for miscellaneous</h3>
+
+<ul>
+<li><code>end()</code> -- </li>
+<li><code>each()</code> -- </li>
+</ul>
+
+<h3 id="toc_51">Public static API</h3>
+
+<ul>
+<li><code>$.matchesSelector</code> -- </li>
+<li><code>$.createNodes</code> -- </li>
+<li><code>$.camelize</code> -- </li>
+<li><code>$.dasherize</code> -- </li>
+<li><code>$.Event</code> -- </li>
+</ul>
+
+<h3 id="toc_52">Why not add XXX</h3>
+
+<ul>
+<li><code>$.ajax()</code> -- </li>
+<li><code>$.when()</code> -- </li>
+<li><code>$.type()</code> -- </li>
+<li><code>$.isArray()</code> -- </li>
+<li><code>$.proxy()</code> -- </li>
+<li><code>$.extend()</code> -- </li>
+<li><code>$.fn.ready()</code> -- </li>
+<li><code>$.fn.animate()</code> -- </li>
+<li><code>$.fn.delegate()</code> -- </li>
+<li><code>$.fn.on()</code> -- </li>
+<li><code>$.fn.map()</code> -- </li>
+<li><code>$.fn.data(object)</code> -- </li>
+<li><code>$.fn.detach(object)</code> -- </li>
+</ul>
+
+<p>Under construction...</p>
+
+<h2 id="toc_53">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_54">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_55">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

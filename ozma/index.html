@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>OzmaJS</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_122">OzmaJS</h1>
+
+<blockquote>
+<ul>
+<li>Intelligent autobuild tool for <a href="http://ozjs.org">OzJS</a></li>
+</ul>
+</blockquote>
+
+<h2 id="toc_123">Install</h2>
+<div class="highlight"><pre><code class="text">npm install -g ozma
+</code></pre>
+</div>
+
+<h2 id="toc_124">Usage</h2>
+<div class="highlight"><pre><code class="text">ozma [build script] --config [configuration file]
+</code></pre>
+</div>
+
+<h2 id="toc_125">Supported options</h2>
+
+<ul>
+<li><code>-c</code> or <code>--config</code> — 指定配置文件，可省略，默认读取输入文件(<code>build script</code>)同级目录下的<code>ozconfig.json</code>作为配置文件</li>
+<li><code>-s</code> or <code>--silent</code> — 不打印任何提示信息</li>
+<li><code>--jam</code> — 基于Jam的package目录自动生成配置和发布文件</li>
+<li><code>--enable-modulelog</code> — 允许js文件中的console信息打印在终端里</li>
+</ul>
+
+<h2 id="toc_126">Examples (with docs)</h2>
+
+<ul>
+<li><a href="http://ozjs.org/ozma/examples/demo1.html">demo1: for production or development</a></li>
+<li><a href="http://ozjs.org/ozma/examples/demo2.html">demo2: for development</a></li>
+<li><a href="http://ozjs.org/ozma/examples/demo3.html">demo3: for production</a></li>
+<li><a href="http://ozjs.org/ozma/examples/demo4.html">demo4: for third party package manager</a></li>
+</ul>
+
+<h2 id="toc_127">Grunt plugin</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/grunt-ozjs">grunt-ozjs</a> enables you to use <a href="https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md">grunt.js gruntfile</a> to configure <code>ozma</code> and integrate with other <a href="http://gruntjs.com/">grunt tasks</a></li>
+</ul>
+
+<h2 id="toc_128">Source code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/ozma.js">View on Github</a></li>
+</ul>
+
+<h2 id="toc_129">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_130">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_131">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

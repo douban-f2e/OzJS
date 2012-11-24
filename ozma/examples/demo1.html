@@ -1,16 +1,63 @@
----
-title: Ozma / Demo1
----
 <!DOCTYPE html>
 <html>
 <head>
-{% include header.html %}
+<meta charset="utf-8">
+
+<title>Ozma / Demo1</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
 <style>
 </style>
 </head>
 <body>
 
-{% include nav.html %}
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
 
 <div class="wrapper">
 <section>
@@ -23,10 +70,11 @@ title: Ozma / Demo1
 
 <h2>How to build distribution file of the demo: </h2>
 <p><a href="../">How to install Ozma.js</a></p>
-{% highlight bash %}
-cd examples/buildtool/
+<div class="highlight"><pre><code class="bash"><span class="nb">cd </span>examples/buildtool/
 ozma js/main_standalone.js --config js/ozconfig_standalone.json
-{% endhighlight %}
+</code></pre>
+</div>
+
 
 <h2>Running result of the demo: </h2>
 <ol>
@@ -95,4 +143,7 @@ define('lazy/E', 'lazy/E_pack.js');
 define('non_AMD/script_1', 'non_AMD/script_1_pack.js');
 </script>
 
-{% include footer.html %}
+
+</body>
+</html>
+

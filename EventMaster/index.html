@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>EventMaster</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_56">EventMaster</h1>
+
+<blockquote>
+<ul>
+<li>A simple, compact and consistent implementation of a variant of CommonJS&#39;s <em>Promises</em> and <em>Events</em></li>
+<li>Provide both <em>Promise/Deferred/Flow</em> pattern and <em>Event/Notify/Observer/PubSub</em> pattern</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_57">AMD and OzJS</h2>
+
+<ul>
+<li>EventMaster can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
+<li>It&#39;s wrapped as an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD (Asynchronous Module Definition)</a> module. You should use it with <a href="http://ozjs.org/#start">oz.js</a> (or require.js or <a href="http://wiki.commonjs.org/wiki/Implementations">similar</a> for handling dependencies). </li>
+<li>If you want to make it available for both other AMD code and traditional code based on global namespace. OzJS provides <a href="http://ozjs.org/examples/adapter/">a mini define/require implementation</a> to transform AMD module into traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>.</li>
+<li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
+</ul>
+
+<h2 id="toc_58">Dependencies</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/mo">mo/lang</a></li>
+</ul>
+
+<h2 id="toc_59">Examples</h2>
+
+<ul>
+<li><a href="http://ozjs.org/EventMaster/examples/">demo</a></li>
+</ul>
+
+<h2 id="toc_60">Get the code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/EventMaster/blob/master/eventmaster.js">View/download on Github</a></li>
+<li>Add/update to your project as new dependency:
+
+<ul>
+<li>via <a href="https://github.com/mockee/istatic.git">istatic</a></li>
+<li>via <a href="https://github.com/volojs/volo">volo</a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_61">API and usage</h2>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Event</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;eventmaster&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>Event(opt)</code> -- </li>
+<li><code>Event.Promise(opt)</code> -- </li>
+<li><code>Event.Event(opt)</code> -- </li>
+<li><code>Event.when(promise, promise, ...)</code> -- </li>
+<li><code>Event.pipe(prev, next)</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="nx">Event</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>event.promise(subject)</code> -- </li>
+<li><code>event.when(subject, subject, ...)</code> -- </li>
+<li><code>event.wait(subject, callback, errorCallback)</code> -- </li>
+<li><code>event.done(subject, callback)</code> -- </li>
+<li><code>event.fail(subject, callback)</code> -- </li>
+<li><code>event.cancel(subject, callback, errorCallback)</code> -- </li>
+<li><code>event.bind(subject, callback)</code> -- </li>
+<li><code>event.unbind(subject, callback)</code> -- </li>
+<li><code>event.on()</code> -- alias for <code>event.bind</code></li>
+<li><code>event.off()</code> -- alias for <code>event.unbind</code></li>
+<li><code>event.progress(subject, callback)</code> -- </li>
+<li><code>event.notify(subject, [arg, arg, ...])</code> -- </li>
+<li><code>event.fire(subject, [arg, arg, ...])</code> -- </li>
+<li><code>event.error(subject, [arg, arg, ...])</code> -- </li>
+<li><code>event.resolve(subject, [arg, arg, ...])</code> -- </li>
+<li><code>event.reject(subject, [arg, arg, ...])</code> -- </li>
+<li><code>event.reset(subject)</code> -- </li>
+<li><code>event.disable(subject)</code> -- </li>
+<li><code>event.enable(subject)</code> -- </li>
+</ul>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">Event</span><span class="p">.</span><span class="nx">Promise</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<ul>
+<li><code>promise.then(callback, errorCallback)</code> -- </li>
+<li><code>promise.done(callback)</code> -- </li>
+<li><code>promise.fail(callback)</code> -- </li>
+<li><code>promise.cancel(callback, errorCallback)</code> -- </li>
+<li><code>promise.bind(callback)</code> -- </li>
+<li><code>promise.unbind(callback)</code> -- </li>
+<li><code>promise.progress()</code> -- </li>
+<li><code>promise.notify()</code> -- </li>
+<li><code>promise.fire([arg, arg, ...])</code> -- </li>
+<li><code>promise.error([arg, arg, ...])</code> -- </li>
+<li><code>promise.resolve([arg, arg, ...])</code> -- </li>
+<li><code>promise.reject([arg, arg, ...])</code> -- </li>
+<li><code>promise.reset()</code> -- </li>
+<li><code>promise.disable()</code> -- </li>
+<li><code>promise.enable()</code> -- </li>
+<li><code>promise.merge()</code> -- </li>
+<li><code>promise.follow()</code> -- </li>
+<li><code>promise.end()</code> -- </li>
+<li><code>promise.all()</code> -- </li>
+<li><code>promise.any()</code> -- </li>
+<li><code>promise.some()</code> -- </li>
+<li><code>promise.pipe.fire(arg, arg, ...)</code> -- </li>
+<li><code>promise.pipe.error(arg, arg, ...)</code> -- </li>
+<li><code>promise.pipe.notify()</code> --</li>
+<li><code>promise.pipe.resolve(arg, arg, ...)</code> -- </li>
+<li><code>promise.pipe.reject(arg, arg, ...)</code> -- </li>
+<li><code>promise.pipe.disable()</code> --</li>
+<li><code>promise.pipe.enable()</code> --</li>
+<li><code>promise.pipe.reset()</code> -- </li>
+</ul>
+
+<p>Under construction...</p>
+
+<h2 id="toc_62">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_63">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_64">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

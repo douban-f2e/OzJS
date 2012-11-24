@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Moui</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h1 id="toc_112">Moui</h1>
+
+<blockquote>
+<ul>
+<li>A collection of OzJS UI behavior modules that form a library called &quot;Moui&quot;</li>
+<li>Under construction...</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_113">AMD and OzJS</h2>
+
+<ul>
+<li>Moui can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
+<li>It&#39;s wrapped as a number of mutually independent <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD (Asynchronous Module Definition)</a> modules. You should use them with <a href="http://ozjs.org/#start">oz.js</a> (or require.js or <a href="http://wiki.commonjs.org/wiki/Implementations">similar</a> for handling dependencies). </li>
+<li>If you want to make them available for both other AMD code and traditional code based on global namespace. OzJS provides <a href="http://ozjs.org/examples/adapter/">a mini define/require implementation</a> to transform AMD module into traditional <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>.</li>
+<li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
+</ul>
+
+<h2 id="toc_114">Dependencies</h2>
+
+<ul>
+<li>jquery or <a href="https://github.com/dexteryy/DollarJS">DollarJS</a></li>
+<li><a href="https://github.com/dexteryy/mo">mo</a></li>
+</ul>
+
+<h2 id="toc_115">Modules Overview</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/moui/blob/master/stick.js">moui/stick</a>: 
+
+<ul>
+<li>Stick a DOM element to anther from any clock position </li>
+</ul></li>
+<li><code>moui/drag</code>: 
+
+<ul>
+<li>Standalone drag &amp; drop library provides HTML5 shim </li>
+<li>Refactoring...</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/moui/blob/master/danvas.js">moui/danvas</a>: 
+
+<ul>
+<li>Implement canvas API using DOM elements</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/moui/blob/master/mention.js">moui/mention</a>: </li>
+<li><a href="https://github.com/dexteryy/moui/blob/master/scrollbar.js">moui/scrollbar</a>: </li>
+<li><a href="https://github.com/dexteryy/moui/blob/master/mapviewer.js">moui/mapviewer</a>: </li>
+<li><a href="https://github.com/dexteryy/moui/blob/master/dialog.js">moui/dialog</a>: </li>
+</ul>
+
+<h2 id="toc_116">Examples</h2>
+
+<p>Under construction...</p>
+
+<h2 id="toc_117">Get the code</h2>
+
+<ul>
+<li><a href="https://github.com/dexteryy/moui/blob/master/">View/download on Github</a></li>
+<li>Add/update to your project as new dependency:
+
+<ul>
+<li>via <a href="https://github.com/mockee/istatic.git">istatic</a></li>
+<li>via <a href="https://github.com/volojs/volo">volo</a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_118">API and usage</h2>
+
+<p>Under construction...</p>
+
+<h2 id="toc_119">More References</h2>
+
+<p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
+
+<h2 id="toc_120">Release History</h2>
+
+<p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
+
+<h2 id="toc_121">License</h2>
+
+<p>Copyright (c) 2010 - 2013 dexteryy<br>
+Licensed under the MIT license.</p>
+
+</section>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>OzJS - a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+
+</head>
+<body>
+
+
+<header>
+
+<p class="logo">OzJS</p>
+<p class="header">OzJS is a microkernel for modular javascript, with bundles of powerful yet micro-framework friendly AMD modules.</p>
+
+<ul class="buttons">
+  <li><a class="buttons github" href="https://github.com/dexteryy/OzJS">View On GitHub</a></li>
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/zipball/master">Download ZIP</a></li>-->
+  <!--<li class="download"><a class="buttons" href="https://github.com/dexteryy/OzJS/tarball/master">Download TAR</a></li>-->
+</ul>
+
+</header>
+
+<nav>
+
+<ul>
+    <li><a href="/#overview">Overview</a></li>
+    <li>
+        <a href="/#toolchain">Toolchain</a>
+        <ul>
+            <li><a href="/ozma/">OzmaJS</a></li>
+            <li><a href="/grunt-ozjs">grunt-ozjs</a></li>
+            <li><a href="/examples/adapter/">adapter.js</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/#framework">Micro-framework</a>
+        <ul>
+            <li><a href="/EventMaster/">EventMaster</a></li>
+            <li><a href="/URLKit/">URLKit</a></li>
+            <li><a href="/DollarJS/">DollarJS</a></li>
+            <li><a href="/CordJS/">CordJS</a></li>
+            <li><a href="/ChoreoJS/">ChoreoJS</a></li>
+            <li><a href="/mo/">Mo</a></li>
+            <li><a href="/moui/">Moui</a></li>
+        </ul>
+    </li>
+    <li><a href="/#start">Getting Started</a></li>
+    <li><a href="/#ref">References</a></li>
+    <li><a href="/#release">Release History</a></li>
+</ul>
+
+</nav>
+
+
+<div class="wrapper">
+<section>
+<h6 id="toc_9"><a href="http://ozjs.org">&gt;&gt; English version</a> <a id="overview">&nbsp;</a></h6>
+
+<h1 id="toc_10">OzJS</h1>
+
+<p>OzJS才不是神马脚本加载器呢！人家是一个在浏览器端运行时中（就是说它主要服务于语言层级，而不是文件层级。<a href="http://ozjs.org/ozma/">ozma.js</a>可以在静态构建环节中基于同等机制更好的处理文件）为大型或复杂JS程序提供长期以来严重缺失（你懂得！）的模块机制的微！内！核！它兼容当前的事实标准（<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>，<a href="http://www.commonjs.org/specs/modules/1.0/">NodeJS/CommonJS</a> 和传统的 <a href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth">module pattern</a>）。</p>
+
+<p><br>
+更妙的是！它比大名鼎鼎的RequireJS实现的更早！所以虽然表面上<a href="http://ozjs.org/docs/define.html">用法类似</a>，只是443行 vs 1232行、5K vs 24K的区别，实践中Oz的设计和实现能带来更强大的能力和更便捷的体验，理念上则差别更大，改日详述…XD </p>
+
+<p><br>
+oz.js的API和代码都是极简和稳定的，不会轻易加新功能（对一个实现模块机制的库来说，通过加入新配置选项或新插件的方式来满足新需求是多么可怕的故事啊！）。Oz项目现在专注于开发一大票能用于自由组合微框架、便于搭建WebApp的通用模块，代码都在<code>/mod</code>目录里，正在逐个发布和完善文档，一个<a href="http://ww4.sinaimg.cn/large/62651c14jw1dvpfdi27o7j.jpg">真实世界中的例子</a>。</p>
+
+<h2 id="toc_11">Toolchain <a id="toolchain">&nbsp;</a></h2>
+
+<h4 id="toc_12"><a href="http://ozjs.org/ozma">OzmaJS</a></h4>
+
+<ul>
+<li>Intelligent autobuild tool for OzJS</li>
+<li><a href="https://github.com/dexteryy/ozma.js">Source code</a></li>
+</ul>
+
+<h4 id="toc_13"><a href="http://ozjs.org/grunt-ozjs">grunt-ozjs</a></h4>
+
+<ul>
+<li>Grunt tasks for oz.js and ozma.js</li>
+<li><a href="https://github.com/dexteryy/grunt-ozjs">Source code</a></li>
+</ul>
+
+<h4 id="toc_14"><a href="http://ozjs.org/adapter">OzJS Adapter</a>:</h4>
+
+<ul>
+<li>Mini define/require mplementation for old web page</li>
+<li>Transform AMD module into traditional module pattern</li>
+<li><a href="https://github.com/dexteryy/OzJS/blob/master/adapter.js">Source code</a></li>
+</ul>
+
+<h2 id="toc_15">Micro-framework <a id="framework">&nbsp;</a></h2>
+
+<p>It is time to stop using All-in-One JavaScript library or framework which bundle all functionalities and solutions within a single global namespace. </p>
+
+<p>OzJS Project provides plenty of tiny, mutually independent, single purpose modules to help you build(mix and match) your own MVC(or suchlike) framework.</p>
+
+<h4 id="toc_16"><a href="http://ozjs.org/EventMaster">EventMaster</a></h4>
+
+<ul>
+<li>A simple, compact and consistent implementation of a variant of CommonJS&#39;s Promises and Events</li>
+<li>Provide both Promise/Deferred/Flow pattern and Event/Notify/Observer/PubSub pattern</li>
+<li><a href="https://github.com/dexteryy/EventMaster">Source code</a></li>
+</ul>
+
+<h4 id="toc_17"><a href="http://ozjs.org/URLKit">URLKit</a></h4>
+
+<ul>
+<li>A lightweight implementation of routing and URL manager</li>
+<li>Automatic switch between html5 History API and IE&#39;s hashbang</li>
+<li><a href="https://github.com/dexteryy/URLKit">Source code</a></li>
+</ul>
+
+<h4 id="toc_18"><a href="http://ozjs.org/DollarJS">DollarJS</a></h4>
+
+<ul>
+<li>A jQuery-compatible and non-All-in-One library which is more &quot;Zepto&quot; than Zepto.js</li>
+<li>Focus on DOM operations and mobile platform, wrap native API wherever possible.</li>
+<li><a href="https://github.com/dexteryy/DollarJS">Source code</a></li>
+</ul>
+
+<h4 id="toc_19">CordJS</h4>
+
+<ul>
+<li>A tiny, pure, event-based model-view-binder (MVB) library which is far more thin than Backbone </li>
+<li>Coming soon...</li>
+</ul>
+
+<h4 id="toc_20"><a href="http://ozjs.org/ChoreoJS">ChoreoJS</a></h4>
+
+<ul>
+<li>An animation library which uses &quot;stage&quot; and &quot;actor&quot; as metaphors</li>
+<li>Automatic switch between CSS transitions and JS tweening</li>
+<li>Provide a flexible way to write asynchronous sequence of actions</li>
+<li>Support CSS transform value</li>
+<li><a href="https://github.com/dexteryy/ChoreoJS">Source code</a></li>
+</ul>
+
+<h4 id="toc_21"><a href="http://ozjs.org/mo">Mo</a></h4>
+
+<ul>
+<li>A collection of OzJS core modules that form a library called &quot;Mo&quot; </li>
+<li>Modules overview
+
+<ul>
+<li><code>mo/lang</code>
+
+<ul>
+<li>ES5/6 shim and minimum utilities for language enhancement</li>
+</ul></li>
+<li><code>mo/domready</code>
+
+<ul>
+<li>Non-plugin implementation of cross-browser DOM ready event</li>
+<li>Based on OzJS&#39;s built-in module -- &#39;finish&#39;</li>
+</ul></li>
+<li><code>mo/browsers</code>
+
+<ul>
+<li>Standalone jQuery.browsers supports skin browsers popular in China </li>
+</ul></li>
+<li><code>mo/cookie</code>
+
+<ul>
+<li>Simple wrapping for managing cookie </li>
+</ul></li>
+<li><code>mo/template</code>
+
+<ul>
+<li>A lightweight and enhanced micro-template implementation, and minimum utilities</li>
+</ul></li>
+<li><code>mo/network</code>
+
+<ul>
+<li>Standalone jQuery.ajax API and enhanced getJSON, and so on</li>
+</ul></li>
+<li><code>mo/easing</code>
+
+<ul>
+<li>An easing library supports jquery.js, standalone module and CSS timing functions</li>
+</ul></li>
+<li><code>mo/mainloop</code>
+
+<ul>
+<li>Implement and manage single loop for WebApp life cycle</li>
+<li>Provide tweening API for both property animation and frame animation(canvas or css)</li>
+</ul></li>
+<li><code>mod/uiproxy</code>
+
+<ul>
+<li>Standalone and most efficient implementation of UI event delegation</li>
+<li>Coming soon...</li>
+</ul></li>
+<li><code>mo/key</code>
+
+<ul>
+<li>Wrapping API for keyboard events</li>
+<li>Support key sequence, multiple key press, ...</li>
+</ul></li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/mo">Source code</a></li>
+</ul>
+
+<h4 id="toc_22"><a href="http://ozjs.org/moui">Moui</a></h4>
+
+<ul>
+<li>A collection of OzJS UI behavior modules that form a library called &quot;Moui&quot; </li>
+<li>Modules overview
+
+<ul>
+<li><code>moui/stick</code>
+
+<ul>
+<li>Stick a DOM element to anther from any clock position </li>
+</ul></li>
+<li><code>moui/drag</code>: 
+
+<ul>
+<li>Standalone drag &amp; drop library provides HTML5 shim </li>
+</ul></li>
+<li><code>moui/danvas</code>
+
+<ul>
+<li>Implement canvas API using DOM elements</li>
+</ul></li>
+<li><code>moui/mention</code></li>
+<li><code>moui/scrollbar</code></li>
+<li><code>moui/mapviewer</code></li>
+<li><code>moui/dialog</code></li>
+<li>More coming soon...</li>
+</ul></li>
+<li><a href="https://github.com/dexteryy/moui">Source code</a></li>
+</ul>
+
+<h4 id="toc_23">Other recommended modules</h4>
+
+<ul>
+<li><a href="https://github.com/dexteryy/db.js">db.js</a>: 
+
+<ul>
+<li>Forked from Aaron Powell&#39;s db.js, removing Deferred, using EventMaster instead </li>
+</ul></li>
+</ul>
+
+<h2 id="toc_24">Getting Started <a id="start">&nbsp;</a></h2>
+
+<p>Download <a href="https://raw.github.com/dexteryy/OzJS/master/oz.js">oz.js</a></p>
+
+<p>You might also need a domReady module: <a href="https://github.com/dexteryy/mo/blob/master/domready.js">domready.js</a></p>
+
+<p>Put them into your project directory, like <code>./js/lib</code> and <code>./js/mo</code> </p>
+
+<p>In your web page:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/lib/oz.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;js/&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/jquery.js&#39;</span><span class="p">);</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;mo/domready&#39;</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">// do something with jquery</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">app</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;app&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">app</span><span class="p">){</span>
+    <span class="c1">// do something with app </span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>That&#39;s all! But for development environments only.</p>
+
+<p>Better practice for real production environments:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/js/main.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="c1">// define modules need demand loading outside main.js</span>
+<span class="nx">define</span><span class="p">(</span><span class="s1">&#39;module(dynamic dependence)&#39;</span><span class="p">,</span> <span class="s1">&#39;CDN_URL/filename_with_timestamp.js&#39;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>Put <code>main.js</code> into <code>./js</code> (not <code>./dist/js</code>)</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;js/&#39;</span><span class="p">,</span>
+    <span class="nx">distUrl</span><span class="o">:</span> <span class="s1">&#39;dist/js/&#39;</span>
+<span class="p">});</span>
+<span class="c1">// same as above</span>
+</code></pre>
+</div>
+
+<p>Install <code>ozma.js</code> through NPM: </p>
+<div class="highlight"><pre><code class="text">npm install ozma -g
+</code></pre>
+</div>
+
+<p>Create a configure file for <code>ozma</code>. The default file name is <code>ozconfig.js</code>, located under the same directory as <code>main.js</code>. In this way you can omit <code>--config</code> parameter for <code>ozma</code>.</p>
+<div class="highlight"><pre><code class="javascript"><span class="p">{</span>
+    <span class="s2">&quot;baseUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;./js/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;distUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;./dist/js/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;loader&quot;</span><span class="o">:</span> <span class="s2">&quot;lib/oz.js&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disableAutoSuffix&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Build distribution files (one or more): </p>
+<div class="highlight"><pre><code class="text">ozma js/main.js
+</code></pre>
+</div>
+
+<p>GRATS! That&#39;s all you need! See <code>./dist/js/main.js</code> for build results, then refresh the web page, see Network Panel in your browser&#39;s developer console. </p>
+
+<p><br>
+See usage for more detail:</p>
+
+<ul>
+<li>Usage with oz.js &amp; ozma.js: 
+
+<ul>
+<li><a href="http://ozjs.org/ozma/examples/demo1.html">demo1: for production or development</a> </li>
+<li><a href="http://ozjs.org/ozma/examples/demo2.html">demo2: for development</a> </li>
+<li><a href="http://ozjs.org/ozma/examples/demo3.html">demo3: for production</a> </li>
+<li><a href="http://ozjs.org/ozma/examples/demo4.html">demo4: for third party package manager</a></li>
+</ul></li>
+<li>Config example for grunt: <a href="http://ozjs.org/grunt-ozjs/">doc</a> </li>
+<li>WebApp demo: <a href="https://github.com/dexteryy/doubanchou">Doubanchou</a></li>
+<li>TodoMVC demo: coming soon...</li>
+</ul>
+
+<h2 id="toc_25">Tutorials <a id="ref">&nbsp;</a></h2>
+
+<ul>
+<li><a href="http://ozjs.org/docs/define.html">define的9种使用方法和模块类型</a></li>
+</ul>
+
+<h2 id="toc_26">In the Real World</h2>
+
+<ul>
+<li><a href="http://alphatown.com">Alphatown</a> <em>2D browser based virtual world</em></li>
+<li><a href="http://read.douban.com/reader">Douban Reader</a> <em>Web browser based e-book reader</em></li>
+<li><a href="http://read.douban.com/submit/">Douban&#39;s contributor system</a> <em>Online self-publishing tool for Douban Reader</em></li>
+<li><a href="http://bubbler.labs.douban.com/">Bubbler</a> <em>Webapp to explore social music technology</em></li>
+<li><a href="https://github.com/dexteryy/BugHunter">BugHunter</a> <em>Multiplayer &quot;answer first game&quot; or a competition responder system, based on NodeJS and OzJS</em></li>
+</ul>
+
+<h2 id="toc_27">More References</h2>
+
+<ul>
+<li><a href="http://www.slideshare.net/dexter_yy/js-6228773">d2forum2010: 通用JS时代的模块机制和编译工具(slide)</a></li>
+<li><a href="http://www.slideshare.net/dexter_yy/mvc-8554206">d2forum2011: 新版阿尔法城背后的前端MVC实践(slide)</a></li>
+</ul>
+
+<h2 id="toc_28">Release History <a id="release">&nbsp;</a></h2>
+
+<ul>
+<li>2012.11.21
+
+<ul>
+<li>OzJS仓库中的<code>/mod</code>拆分为7个子项目和独立仓库</li>
+<li><code>mod/event</code> 改名为 <a href="https://github.com/dexteryy/EventMaster/">EventMaster</a></li>
+<li><code>/mod</code>中的模块重命名为 <a href="https://github.com/dexteryy/mo/">Mo</a> 和 <a href="https://github.com/dexteryy/moui/">Moui</a></li>
+<li>网站重构</li>
+</ul></li>
+<li>2012.11.21
+
+<ul>
+<li>首页文档重新组织，增加模块列表和描述</li>
+<li><code>ChoreoJS</code> v1.0.0 发布</li>
+<li><code>mod/event</code> 增加disable/enable, progress/notify, merge等方法</li>
+<li><code>mod/mainloop</code> 更新</li>
+<li><code>mod/lang</code> 更新</li>
+<li><code>mod/animate</code> 改名 <a href="https://github.com/dexteryy/ChoreoJS/">ChoreoJS</a></li>
+<li><code>mod/url</code> 改名 <a href="https://github.com/dexteryy/URLKit/">URLKit</a></li>
+<li><code>mod/domcanvas</code> 改名 <code>mod/danvas</code></li>
+</ul></li>
+<li>2012.11.13
+
+<ul>
+<li><code>mod/url</code> 完善配置参数，增加<a href="http://ozjs.org/URLKit/">示例和文档</a></li>
+</ul></li>
+<li>2012.10.18
+
+<ul>
+<li><code>oz.js</code>: <code>require.config</code>增加<code>debug</code>参数，可将已发布的线上代码映射到本地源文件</li>
+<li><code>ozma.js</code> 1.3
+
+<ul>
+<li>完善了CJS风格模块在构建中自动转换为AMD风格的特性</li>
+<li>config文件增加<code>ignore</code>选项，支持传统网站多页面项目的文件组织方式</li>
+<li>构建过程中支持远程模块的串行加载，避免额外的Unrecognized module警告</li>
+</ul></li>
+</ul></li>
+<li>2012.10.15
+
+<ul>
+<li><code>grunt-ozjs</code> 0.1 <a href="http://ozjs.org/grunt-ozjs">Installation guide</a></li>
+<li><code>ozma.js</code> 1.2 迁移到<a href="https://github.com/dexteryy/ozma.js">独立仓库</a></li>
+</ul></li>
+<li>2012.10.13
+
+<ul>
+<li><code>adapter.js</code>发布beta <a href="http://ozjs.org/examples/adapter/">示例和文档</a> </li>
+<li><code>mod/event</code> 增加<code>promise.pipe</code>接口，某些API加了别名 <a href="http://ozjs.org/EventMaster/">示例和文档</a></li>
+</ul></li>
+<li>2012.10.11
+
+<ul>
+<li><code>mod/dollar</code> 发布beta <a href="http://ozjs.org/DollarJS/">示例和文档</a></li>
+</ul></li>
+<li>2012.9.26
+
+<ul>
+<li><code>mod/lang</code> 增加示例</li>
+</ul></li>
+<li>2012.9.21
+
+<ul>
+<li><code>ozma.js</code> 1.1，npm可更新</li>
+<li><code>ozma.js</code>对动态加载模块的多路径依赖问题提供完善的构建支持</li>
+</ul></li>
+<li>2012.9.20
+
+<ul>
+<li><code>ozma.js</code> 支持第三方包管理系统<code>Jam</code>，<a href="http://ozjs.org/ozma/">示例和用法</a></li>
+<li><code>oz.js</code>默认启用<code>define.amd</code>，<code>ozma.js</code>能更好的解析非AMD文件。</li>
+</ul></li>
+<li>2012.9.10
+
+<ul>
+<li>bugfix: <code>oz.js</code>的<code>new!</code>插件</li>
+</ul></li>
+</ul>
+
+</section>
+</div>
+
+
+</body>
+</html>
+
