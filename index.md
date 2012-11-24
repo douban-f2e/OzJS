@@ -127,9 +127,9 @@ In your web page:
 require.config({
     baseUrl: 'js/'
 });
-
+//
 define('jquery', 'lib/jquery.js');
-
+//
 define('app', [
     'jquery', 
     'mo/domready'
@@ -139,7 +139,7 @@ define('app', [
     };
     return app;
 });
-
+//
 require(['app'], function(app){
     // do something with app 
 });
@@ -165,7 +165,6 @@ require.config({
     baseUrl: 'js/',
     distUrl: 'dist/js/'
 });
-
 // same as above
 ```
 

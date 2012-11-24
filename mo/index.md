@@ -116,7 +116,7 @@ var browsers = require('mo/browsers');
 
 ```javascript 
 var cookie = require('mo/cookie');
-
+//
 cookie(name, value, {
     domain: 'ozjs.org', // '' as default
     path: '/', // '' as default
@@ -124,6 +124,7 @@ cookie(name, value, {
     secure: ''
 });
 ```
+
 ### mo/template
 
 ```javascript 
@@ -163,15 +164,14 @@ var easingLib = require('mo/easing');
 
 ```javascript 
 // use it as extension of other library
-
 var $ = require('jquery');
 $.easing['jswing'] = $.easing['swing'];
 $.extend($.easing, easingLib.functions);
-
+//
 require('mo/mainloop').config({
     easing: easingLib.functions
 });
-
+//
 require('choreo').config({
     easing: easingLib
 });
