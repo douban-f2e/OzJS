@@ -1,0 +1,4 @@
+{
+    "baseUrl": "./js/",
+    "loader": "../../../js/lib/oz.js"
+}

@@ -1,0 +1,54 @@
+---
+title: Ozma / Demo2
+---
+<!DOCTYPE html>
+<html>
+<head>
+{% include header.html %}
+<style>
+</style>
+</head>
+<body>
+
+{% include nav.html %}
+
+<div class="wrapper">
+<section>
+
+<h1><a href="../">Ozma</a> / Demo2</h1>
+<blockquote>for development<br>适合产品原型或个人小型项目的快速开发和调试，也是<a href="demo3.html">示例3</a>在开发环境中的状态。</blockquote>
+
+<h2>Source code for the demo: </h2>
+<p><a href="https://github.com/dexteryy/OzJS/tree/gh-pages/ozma/examples/">View on Github</a></p>
+
+<h2>How to build distribution file of the demo: </h2>
+<p><a href="../">How to install Ozma.js</a></p>
+<p>No build step is required</p>
+
+<h2>Running result of the demo: </h2>
+<ol>
+<li>Open the developer console of the browser</li>
+<li>Refresh</li>
+</ol>
+
+<h2>Notes: </h2>
+<p>Under construction...</p>
+
+<h2>说明：</h2>
+<ul>
+    <li>在开发环境中，修改源码后可直接调试，无需构建。</li>
+    <li>由<var>oz.js</var>动态加载所需module的源码文件。每个module的初始化都会产生一次异步请求。</li>
+    <li><var>main.js</var>中配置的<var>distUrl</var>在开发环境（本页）中不产生效果，仍然基于<var>baseUrl</var>来生成所需文件的URL。</li>
+    <li>发布到生产环境时，使用<a href="demo3.html">示例3</a>的方法可以无缝切换：除了增加构建环节，还需要由服务器端模版将<var>js/main.js</var>替换为<var>distUrl</var>路径下的发布文件。</li>
+</ul>
+
+</section>
+</div>
+
+<script>
+var _main_domain_ = 'http://www.xxx.com';
+</script>
+<script src="../../../js/lib/oz.js"></script>
+<script src="js/main.js"></script>
+
+{% include footer.html %}

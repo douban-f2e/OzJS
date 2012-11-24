@@ -1,5 +1,5 @@
 ---
-title: OzJS / Adapter / Demo
+title: EventMaster / Demo
 ---
 <!DOCTYPE html>
 <html>
@@ -15,28 +15,27 @@ title: OzJS / Adapter / Demo
 <div class="wrapper">
 <section>
 
-<h1><a href="../../">OzJS</a> / Adapter / Demo</h1>
-<blockquote>
-<ul>
-<li>Mini define/require mplementation for old web page</li>
-<li>Transform AMD module into traditional module pattern</li>
-</ul>
-</blockquote>
+<h1><a href="../">EventMaster</a> / Demo</h1>
 
 <h2>Source code for the demo: </h2>
-<p><a href="https://github.com/dexteryy/OzJS/tree/gh-pages/examples/adapter/">View on Github</a></p>
+<p><a href="https://github.com/dexteryy/OzJS/tree/gh-pages/EventMaster/examples/">View on Github</a></p>
 
 <h2>Running result of the demo: </h2>
 
 <ol>
 <li>Open the developer console of the browser</li>
 <li>Refresh</li>
+<li>Click the buttons</li>
 </ol>
+<p>
+	<input type="button" value="clickEvent1" id="btn1" />
+	<input type="button" value="clickEvent2" id="btn2" />
+</p>
 
 </section>
 </div>
 
-<script src="/js/lib/adapter.js"></script>
+<script src="/js/lib/oz.js"></script>
 <script src="demo.js"></script>
 
 {% include footer.html %}

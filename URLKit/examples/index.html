@@ -1,0 +1,45 @@
+---
+title: URLKit / Demo
+---
+<!DOCTYPE html>
+<html>
+<head>
+{% include header.html %}
+<style>
+</style>
+</head>
+<body>
+
+{% include nav.html %}
+
+<div class="wrapper">
+<section>
+
+<h1><a href="/URLKit">URLKit</a> / Demo</h1>
+
+<h2>Source code for the demo: </h2>
+<p><a href="https://github.com/dexteryy/OzJS/tree/gh-pages/URLKit/examples/">View on Github</a></p>
+
+<h2>Running result of the demo: </h2>
+
+<ol>
+<li>Open the developer console of the browser</li>
+<li>Click the following links, then click the buttons below, and then try pressing browser's back/forward buttons.</li>
+</ol>
+<div>
+    <ul class="url-list">
+        <li><a href="house/0/room/1?page=1">[baseUrl]/house/0/room/1?page=1</a></li>
+        <li><a href="house/0/room/1?page=2">[baseUrl]/house/0/room/1?page=2</a></li>
+        <li><a href="house/1/room/2?page=1">[baseUrl]/house/1/room/2?page=1</a></li>
+        <li><button class="btn1">url.nav({ '1': ++house_id, '2': false, 'page': ++page_id })</button></li>
+        <li><button class="btn2">url.nav({ 'page': ++page_id }, { replace: true })</button></li>
+    </ul>
+</div>
+
+</section>
+</div>
+
+<script src="/js/lib/oz.js"></script>
+<script src="demo.js"></script>
+
+{% include footer.html %}
