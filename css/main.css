@@ -386,6 +386,10 @@ section {
 	background-color: #FBFAF7;
 }
 
+section p {
+  margin-bottom:10px;
+}
+
 
 /* Footer */
 
@@ -432,13 +436,15 @@ footer {
   }
 
   p.logo{
-    width:163px;
+    width:100px;
+    height:180px;
+    background-size: 100px auto;
     float:left;
   }
 
   p.header,
   header ul{
-    padding-left:200px;
+    padding-left:115px;
   }
 
 }

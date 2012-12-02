@@ -1,6 +1,6 @@
 define([
-    "lazy/X",
-    "lazy/A"
+    "./X",
+    "./A"
 ], function(lazy_X, lazy_A){
 
     return {

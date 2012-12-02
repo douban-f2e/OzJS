@@ -1,6 +1,7 @@
 
-define('moui/datepicker', ['jquery', 'host'], function($, host) {
-    var doc                 = host.document,
+define('moui/datepicker', ['jquery'], function($) {
+    var host                = this,
+        doc                 = host.document,
         debug               = false,
         isOpera             = Object.prototype.toString.call(host.opera) === "[object Opera]",
         describedBy         = "",

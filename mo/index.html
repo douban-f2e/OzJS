@@ -59,7 +59,7 @@
 
 <div class="wrapper">
 <section>
-<h1 id="toc_94">Mo</h1>
+<h1 id="toc_107">Mo</h1>
 
 <blockquote>
 <ul>
@@ -67,7 +67,7 @@
 </ul>
 </blockquote>
 
-<h2 id="toc_95">AMD and OzJS</h2>
+<h2 id="toc_108">AMD and OzJS</h2>
 
 <ul>
 <li>Mo can either be viewed as an independent library, or as a part of <a href="http://ozjs.org/#framework">OzJS mirco-framework</a>.</li>
@@ -76,7 +76,7 @@
 <li>See <a href="http://ozjs.org">http://ozjs.org</a> for details.</li>
 </ul>
 
-<h2 id="toc_96">Modules Overview</h2>
+<h2 id="toc_109">Modules Overview</h2>
 
 <ul>
 <li><a href="https://github.com/dexteryy/mo/blob/master/lang.js">mo/lang</a>: 
@@ -129,16 +129,16 @@
 </ul></li>
 </ul>
 
-<h2 id="toc_97">Examples</h2>
+<h2 id="toc_110">Examples</h2>
 
 <ul>
 <li><a href="http://ozjs.org/mo/examples/lang">demo for mo/lang</a></li>
 </ul>
 
-<h2 id="toc_98">Get the code</h2>
+<h2 id="toc_111">Get the code</h2>
 
 <ul>
-<li><a href="https://github.com/dexteryy/moui/blob/master/">View/download on Github</a></li>
+<li><a href="https://github.com/dexteryy/mo/blob/master/">View/download on Github</a></li>
 <li>Add/update to your project as new dependency:
 
 <ul>
@@ -147,9 +147,9 @@
 </ul></li>
 </ul>
 
-<h2 id="toc_99">API and usage</h2>
+<h2 id="toc_112">API and usage</h2>
 
-<h3 id="toc_100">mo/lang</h3>
+<h3 id="toc_113">mo/lang</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/lang&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -169,7 +169,6 @@
 <li><code>_.unique(list)</code> -- </li>
 <li><code>_.ns(string, value)</code> -- </li>
 <li><code>_.FnQueue()</code> -- </li>
-<li><code>_.semver(version1, version2)</code> -- </li>
 </ul>
 <div class="highlight"><pre><code class="javascript"><span class="c1">// Add ES5 methods in browsers that don&#39;t natively support them:</span>
 </code></pre>
@@ -192,14 +191,14 @@
 <li><code>Function.prototype.bind</code></li>
 </ul>
 
-<h3 id="toc_101">mo/domready</h3>
+<h3 id="toc_114">mo/domready</h3>
 <div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;mo/domready&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">none</span><span class="p">){</span>
     <span class="c1">// won&#39;t execute until the page&#39;s entire DOM has loaded</span>
 <span class="p">});</span>
 </code></pre>
 </div>
 
-<h3 id="toc_102">mo/browsers</h3>
+<h3 id="toc_115">mo/browsers</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">browsers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/browsers&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -212,7 +211,7 @@
 <li><code>browsers[&#39;msie&#39;|&#39;webkit&#39;|&#39;mozilla&#39;|...]</code> --</li>
 </ul>
 
-<h3 id="toc_103">mo/browsers</h3>
+<h3 id="toc_116">mo/cookie</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/cookie&#39;</span><span class="p">);</span>
 
 <span class="nx">cookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">{</span>
@@ -224,7 +223,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_104">mo/template</h3>
+<h3 id="toc_117">mo/template</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/template&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -239,7 +238,7 @@
 <li><code>tpl.reloadTpl(tplName)</code> -- </li>
 </ul>
 
-<h3 id="toc_105">mo/network</h3>
+<h3 id="toc_118">mo/network</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/network&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -253,7 +252,7 @@
 <li><code>net.getRequest(url, params)</code> -- </li>
 </ul>
 
-<h3 id="toc_106">mo/easing</h3>
+<h3 id="toc_119">mo/easing</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">easingLib</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/easing&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -264,6 +263,7 @@
 <li><code>easingLib.functions</code> -- </li>
 </ul>
 <div class="highlight"><pre><code class="javascript"><span class="c1">// use it as extension of other library</span>
+
 <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">[</span><span class="s1">&#39;jswing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">[</span><span class="s1">&#39;swing&#39;</span><span class="p">];</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">easing</span><span class="p">,</span> <span class="nx">easingLib</span><span class="p">.</span><span class="nx">functions</span><span class="p">);</span>
@@ -278,7 +278,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_107">mo/mainloop</h3>
+<h3 id="toc_120">mo/mainloop</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">loop</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/mainloop&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -297,7 +297,7 @@
 <li><code>loop.addTween(stageName, current, end, duration, options)</code> -- </li>
 </ul>
 
-<h3 id="toc_108">mo/key</h3>
+<h3 id="toc_121">mo/key</h3>
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Key</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mo/key&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
@@ -323,15 +323,15 @@
 
 <p>Under construction...</p>
 
-<h2 id="toc_109">More References</h2>
+<h2 id="toc_122">More References</h2>
 
 <p>See <a href="http://ozjs.org/#ref">OzJS References</a></p>
 
-<h2 id="toc_110">Release History</h2>
+<h2 id="toc_123">Release History</h2>
 
 <p>See <a href="http://ozjs.org/#release">OzJS Release History</a></p>
 
-<h2 id="toc_111">License</h2>
+<h2 id="toc_124">License</h2>
 
 <p>Copyright (c) 2010 - 2013 dexteryy<br>
 Licensed under the MIT license.</p>

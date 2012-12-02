@@ -2,7 +2,7 @@
 require([
     "lazy/A",
     "lazy/B",
-    "lazy/C"
+    "./C"
 ], function(lazy_A, lazy_B, lazy_C){
 
     console.info('"lazy/ABC" ready!', {

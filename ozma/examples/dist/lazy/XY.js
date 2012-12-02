@@ -17,7 +17,7 @@ define("lazy/D", [], function(){
 /* @source lazy/Y.js */;
 
 define("lazy/Y", [
-    "lazy/D"
+  "lazy/D"
 ], function(lazy_D){
 
     return {
@@ -32,7 +32,7 @@ define("lazy/Y", [
 /* @source lazy/C.js */;
 
 define("lazy/C", [
-    "C"
+  "C"
 ], function(C){
 
     return {
@@ -48,7 +48,7 @@ define("lazy/C", [
 /* @source lazy/X.js */;
 
 define("lazy/X", [
-    "lazy/C"
+  "lazy/C"
 ], function(lazy_C){
 
     return {
@@ -63,8 +63,8 @@ define("lazy/X", [
 /* @source lazy/XY.js */;
 
 define("lazy/XY", [
-    "lazy/X",
-    "lazy/Y"
+  "lazy/X",
+  "lazy/Y"
 ], function(lazy_X, lazy_Y){
 
     return {

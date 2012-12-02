@@ -1,5 +1,5 @@
 define([
-    "C"
+    "./C"
 ], function(C){
 
     return {

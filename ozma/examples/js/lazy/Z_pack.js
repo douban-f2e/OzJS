@@ -2,7 +2,7 @@
 /* @source lazy/C.js */;
 
 define("lazy/C", [
-    "C"
+  "C"
 ], function(C){
 
     return {
@@ -18,7 +18,7 @@ define("lazy/C", [
 /* @source lazy/X.js */;
 
 define("lazy/X", [
-    "lazy/C"
+  "lazy/C"
 ], function(lazy_C){
 
     return {
@@ -33,8 +33,8 @@ define("lazy/X", [
 /* @source lazy/Z.js */;
 
 define("lazy/Z", [
-    "lazy/X",
-    "lazy/A"
+  "lazy/X",
+  "lazy/A"
 ], function(lazy_X, lazy_A){
 
     return {

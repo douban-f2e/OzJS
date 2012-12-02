@@ -1,5 +1,5 @@
 define([
-    "lazy/C"
+    "./C"
 ], function(lazy_C){
 
     return {

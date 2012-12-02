@@ -1,7 +1,7 @@
 define(function(require){
 
-    var C = require('C');
-    var lazy_C = require('lazy/C');
+    var C = require('../C');
+    var lazy_C = require('./C');
     var lazy_D = require('lazy/D');
 
     return {

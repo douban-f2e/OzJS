@@ -11,4 +11,6 @@ define("non_AMD/script_2", [], function(){});
 console.log('non_AMD/script_1 is here~');
 
 /* autogeneration */
-define("non_AMD/script_1", ["non_AMD/script_2"], function(){});
+define("non_AMD/script_1", [
+  "non_AMD/script_2"
+], function(){});

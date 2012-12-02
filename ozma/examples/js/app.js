@@ -1,11 +1,11 @@
 define([
-    "A",
+    "./A",
     "B"
 ], function(A, B){
 
     // 模块内执行的require不会在主发布文件中增加新的依赖，而是单独生成新的发布文件
     // 当模块内包含多处require时，他们的依赖关系会分别计算，不会互相干扰。
-    require('lazy/A', function(lazy_A){
+    require('./lazy/A', function(lazy_A){
         console.info('"lazy/A" in "app" ready!', lazy_A);
     });
 

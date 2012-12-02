@@ -14,11 +14,11 @@
 define("choreo", [
     "mo/lang", 
     "mo/mainloop", 
-    "eventmaster", 
-    "host"
-], function(_, mainloop, Event, window){
+    "eventmaster"
+], function(_, mainloop, Event){
 
-    var VENDORS = ['', 'Moz', 'webkit', 'ms', 'O'],
+    var window = this,
+        VENDORS = ['', 'Moz', 'webkit', 'ms', 'O'],
         EVENT_NAMES = {
             '': 'transitionend',
             'Moz': 'transitionend',
@@ -107,7 +107,7 @@ define("choreo", [
 
     function Stage(name){
         if (!name) {
-            name = '_oz_anim_stage_' + stage_id++;
+            name = '_oz_choreo_' + stage_id++;
         }
         if (_stage[name]) {
             return _stage[name];
@@ -805,7 +805,7 @@ define("choreo", [
 
     _.mix(exports, {
 
-        VERSION: '1.0.0',
+        VERSION: '1.0.1',
         renderMode: useCSS ? 'css' : 'js',
         Stage: Stage,
         Actor: Actor,

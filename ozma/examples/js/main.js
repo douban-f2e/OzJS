@@ -8,7 +8,7 @@ require.config({
     // 相对baseUrl的路径，可在远程模块声明的参数中使用（不可在模块名中使用）
     // 构建工具也会重用此处的配置，所以在配置文件中可省略
     aliases: {
-        "lib": "../lib/",
+        "mo": "../../../js/mo/", // 此处的用法在lib/jquery.js里
         "external": "../../../js/"
     }
 });
@@ -18,10 +18,9 @@ require.config({
 define('non_AMD/script_1', ['non_AMD/script_2']);
 
 // 确保发布文件中jquery插件的代码位于jquery代码之后
-// 构建工具会将{lib}和{external}替换为aliases中配置的相对路径
-define('lib/jquery.mousewheel', ['lib/jquery_src'], '{lib}jquery.mousewheel.js');
+// 构建工具会将{external}替换为aliases中配置的相对路径
+define('lib/jquery.mousewheel', ['lib/jquery_src'], '../lib/jquery.mousewheel.js');
 define('lib/jquery_src', '{external}jquery.js');
-define('mo/easing', '{external}mo/easing.js');
 
 // 与文件无关的named module声明，缺少这项声明时，构建工具会警告Undefined module
 define('domain', function(){
