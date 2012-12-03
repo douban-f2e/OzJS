@@ -59,11 +59,11 @@
 
 <div class="wrapper">
 <section>
-<h1 id="toc_35"><a href="/">OzJS</a> / define &amp; require</h1>
+<h1 id="toc_36"><a href="/">OzJS</a> / define &amp; require</h1>
 
-<h2 id="toc_36">define的用法</h2>
+<h2 id="toc_37">define的用法</h2>
 
-<h3 id="toc_37">1. AMD风格的公共模块</h3>
+<h3 id="toc_38">1. AMD风格的公共模块</h3>
 
 <ul>
 <li>适合同时被多个项目使用的模块，也是发布为开源项目的推荐写法</li>
@@ -86,7 +86,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_38">2. AMD风格的私有模块</h3>
+<h3 id="toc_39">2. AMD风格的私有模块</h3>
 
 <ul>
 <li>省略模块命名，适合仅在项目内部使用的私有模块，被写入依赖时可用相对当前文件的路径作为临时命名</li>
@@ -106,7 +106,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_39">3. 异步模块</h3>
+<h3 id="toc_40">3. 异步模块</h3>
 
 <ul>
 <li>基于oz.js的内建模块&quot;finish&quot;</li>
@@ -125,7 +125,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_40">4. 远程模块</h3>
+<h3 id="toc_41">4. 远程模块</h3>
 
 <ul>
 <li>用于依赖那些位于其他文件中、且命名与文件地址不一致的模块</li>
@@ -142,7 +142,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_41">5. 非AMD脚本声明为远程模块</h3>
+<h3 id="toc_42">5. 非AMD脚本声明为远程模块</h3>
 
 <ul>
 <li>用于解决AMD代码对非AMD脚本的依赖，以及多个非AMD脚本之间的依赖（比如jquery依赖jquery.js）</li>
@@ -159,7 +159,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_42">6. CommonJS风格的公共模块</h3>
+<h3 id="toc_43">6. CommonJS风格的公共模块</h3>
 
 <ul>
 <li>当define的参数不包含依赖关系（数组）时，会从模块代码中解析依赖关系</li>
@@ -176,7 +176,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_43">7. CommonJS风格的私有模块</h3>
+<h3 id="toc_44">7. CommonJS风格的私有模块</h3>
 
 <ul>
 <li>同 <em>2</em> 和 <em>6</em></li>
@@ -191,31 +191,31 @@
 </code></pre>
 </div>
 
-<h2 id="toc_44">require的用法</h2>
+<h2 id="toc_45">require的用法</h2>
 
-<h3 id="toc_45">require的机制</h3>
+<h3 id="toc_46">require的机制</h3>
 
 <ul>
 <li>require的代码块等同于无命名、无输出、会在声明之后立刻尝试解决依赖并执行的模块代码，所以以下机制也适用于define</li>
 <li>解决依赖时，基于不同模块名对应的模块状态，处理方式如下：
 
 <ol>
-<li>&quot;public_module&quot;还没有声明过（即没有执行过<code>define(&quot;public_module&quot;, ...)</code>），会根据模块名生成一个文件地址（基于当前文件解析相对路径、将aliases里配置过的别名替换为实际路径、加上&#39;.js&#39;后缀，等等），然后自动为这个模块名声明一个远程模块，指向这个文件地址，之后重新检测依赖关系，同状态 <em>2</em></li>
+<li>&quot;alias/A&quot;还没有声明过（即没有执行过<code>define(&quot;alias/A&quot;, ...)</code>），会根据模块名生成一个文件地址（基于当前文件解析相对路径、将aliases里配置过的别名替换为实际路径、加上&#39;.js&#39;后缀，等等），然后自动为这个模块名声明一个远程模块，指向这个文件地址，之后重新检测依赖关系，同状态 <em>2</em></li>
 <li>&quot;remote_module&quot;已声明为远程模块，会先下载对应的js文件，等加载完成执行其中的define代码，当前远程模块被新声明的同名模块或匿名模块替代，之后重新检测依赖关系，同状态 <em>3</em></li>
 <li>&quot;public_module&quot;已声明为本地模块，如果此模块也存在依赖，则回到状态 <em>1</em>，如果没有依赖或依赖已解决，则执行当前模块的代码，获得return的值或exports的值，等所有依赖都像这样解决完之后，开始执行require的代码块</li>
 </ol></li>
 </ul>
 <div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span>
-    <span class="s2">&quot;./private_module&quot;</span><span class="p">,</span> <span class="c1">//  模块状态1</span>
+    <span class="s2">&quot;alias/A&quot;</span><span class="p">,</span> <span class="c1">//  模块状态1</span>
     <span class="s2">&quot;remote_module&quot;</span><span class="p">,</span> <span class="c1">// 模块状态2</span>
     <span class="s2">&quot;public_module&quot;</span> <span class="c1">// 模块状态3</span>
-<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">mod</span><span class="p">,</span> <span class="nx">remote</span><span class="p">,</span> <span class="nx">pub</span><span class="cm">/*, require */</span><span class="p">){</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">remote</span><span class="p">,</span> <span class="nx">pub</span><span class="cm">/*, require */</span><span class="p">){</span>
     <span class="c1">// do something</span>
 <span class="p">});</span>
 </code></pre>
 </div>
 
-<h3 id="toc_46">require的参数</h3>
+<h3 id="toc_47">require的参数</h3>
 
 <ul>
 <li>用法类似define，同样支持CommonJS风格</li>
@@ -233,13 +233,13 @@
 </code></pre>
 </div>
 
-<h3 id="toc_47">require表达动态依赖</h3>
+<h3 id="toc_48">require表达动态依赖</h3>
 
 <ul>
 <li>使用<a href="http://ozjs.org/ozma/">ozma</a>为产品环境做生成发布文件时，位于全局作用域中的require引入的依赖会被打包到主发布文件中，而位于模块代码内的require引入的依赖会被单独打包</li>
 <li>开发时无需考虑文件加载策略，只需按照业务逻辑描述依赖（引入当前需要的模块，而不是手动指定加载哪个文件），之后由构建工具（<a href="http://ozjs.org/ozma/">ozma</a>）生成合适的发布文件，自动为产品环境实现延后加载和按需加载</li>
 </ul>
-<div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="s2">&quot;./private_module_A&quot;</span><span class="p">,</span>
     <span class="s2">&quot;remote_module&quot;</span><span class="p">,</span>
     <span class="s2">&quot;public_module&quot;</span>
@@ -255,23 +255,23 @@
 </code></pre>
 </div>
 
-<h3 id="toc_48">require的配置</h3>
+<h3 id="toc_49">require的配置</h3>
 
 <ul>
-<li>Coming soon...</li>
+<li>require.config可以多次调用，添加新的配置或覆盖之前的配置</li>
 </ul>
 <div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;js/mod/&#39;</span><span class="p">,</span>       <span class="c1">// </span>
-    <span class="nx">distUrl</span><span class="o">:</span> <span class="s1">&#39;dist/js/mod/&#39;</span><span class="p">,</span>  <span class="c1">// 可选</span>
-    <span class="nx">aliases</span><span class="o">:</span> <span class="p">{</span>                <span class="c1">// 可选，用于模块名和远程模块的地址</span>
+    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;/js/mod/&#39;</span><span class="p">,</span>  <span class="c1">// js文件URL的基础部分（ozma的配置文件里的baseUrl则表示本地路径），默认为&quot;&quot;</span>
+    <span class="nx">distUrl</span><span class="o">:</span> <span class="s1">&#39;http://static_domain/js/mod/&#39;</span><span class="p">,</span>  <span class="c1">// oz.js在处理ozma生成的发布文件时，会用distUrl取代baseUrl（产品环境中html里如果指定了CDN地址，则不会用到baseUrl和distUrl）</span>
+    <span class="nx">aliases</span><span class="o">:</span> <span class="p">{</span>                <span class="c1">// 可选。能用于模块名和远程模块的地址</span>
         <span class="s1">&#39;app&#39;</span><span class="o">:</span> <span class="s1">&#39;../app/&#39;</span>      <span class="c1">// 相对于baseUrl</span>
     <span class="p">},</span>
-    <span class="nx">enableAutoSuffix</span><span class="o">:</span> <span class="kc">false</span>   <span class="c1">// </span>
+    <span class="nx">enableAutoSuffix</span><span class="o">:</span> <span class="kc">false</span>   <span class="c1">// 如果ozma的配置文件里设置了`disableAutoSuffix: false`（默认为true），则oz.js需要设置`enableAutoSuffix: true`</span>
 <span class="p">});</span>
 </code></pre>
 </div>
 
-<h3 id="toc_49">重新执行模块</h3>
+<h3 id="toc_50">重新执行模块</h3>
 
 <ul>
 <li>模块名称前的new!是一个插件，功能是重新执行模块代码，生成新的return对象或exports对象</li>
@@ -284,7 +284,7 @@
 </code></pre>
 </div>
 
-<h3 id="toc_50">相同模块代码作用于不同window</h3>
+<h3 id="toc_51">相同模块代码作用于不同window</h3>
 
 <ul>
 <li>常用于在iframe页面里调用父页面中已执行过的模块</li>
