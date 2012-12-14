@@ -202,7 +202,7 @@
 <ol>
 <li>&quot;alias/A&quot;还没有声明过（即没有执行过<code>define(&quot;alias/A&quot;, ...)</code>），会根据模块名生成一个文件地址（基于当前文件解析相对路径、将aliases里配置过的别名替换为实际路径、加上&#39;.js&#39;后缀，等等），然后自动为这个模块名声明一个远程模块，指向这个文件地址，之后重新检测依赖关系，同状态 <em>2</em></li>
 <li>&quot;remote_module&quot;已声明为远程模块，会先下载对应的js文件，等加载完成执行其中的define代码，当前远程模块被新声明的同名模块或匿名模块替代，之后重新检测依赖关系，同状态 <em>3</em></li>
-<li>&quot;public_module&quot;已声明为本地模块，如果此模块也存在依赖，则回到状态 <em>1</em>，如果没有依赖或依赖已解决，则执行当前模块的代码，获得return的值或exports的值，等所有依赖都像这样解决完之后，开始执行require的代码块</li>
+<li>&quot;public_module&quot;已声明为本地模块，如果此模块也存在依赖，则回到状态 *1*，如果没有依赖或依赖已解决，则执行当前模块的代码，获得return的值或exports的值，等所有依赖都像这样解决完之后，开始执行require的代码块</li>
 </ol></li>
 </ul>
 <div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">([</span>

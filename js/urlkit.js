@@ -10,9 +10,8 @@
  * vim: et:ts=4:sw=4:sts=4
  */
 define("urlkit", [
-   "mo/lang", 
-   "mo/browsers"
-], function(_, browsers){
+   "mo/lang"
+], function(_){
 
     var encode = encodeURIComponent,
         decode = decodeURIComponent,
@@ -337,7 +336,7 @@ define("urlkit", [
     exports.parse = parse;
     exports.param = param;
     exports.SUPPORT_PUSHSTATE = _has_pushState;
-    exports.VERSION = '1.0.0';
+    exports.VERSION = '1.0.1';
 
     return exports;
 
